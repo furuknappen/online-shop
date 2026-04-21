@@ -1,0 +1,48 @@
+#gridContainerHomepage {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  column-gap: 8px;
+  row-gap: 8px;
+  margin-bottom: 3rem;
+}
+
+.bestsellerDiv {
+  margin-inline: auto;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  text-wrap: nowrap;
+  /* margin-inline: 1rem; */
+  align-items: start;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.bestsellerDiv h1 {
+  font-family: var(--main-font);
+  font-weight: 400;
+  margin-bottom: 1rem
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 769px) {
+ #gridContainerHomepage {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+   .bestsellerDiv {
+    margin-inline: 1rem;
+  }
+
+
+}
+@media (min-width: 1025px) {
+  #gridContainerHomepage {
+    /* width: 60rem; */
+      column-gap: 15px;
+  row-gap: 15px;
+  margin-bottom: 3rem;
+  }
+  
+  .bestsellerLink {
+    font-size: 2rem;
+  }
+}

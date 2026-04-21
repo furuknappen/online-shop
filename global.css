@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+.border {
+  border-radius: var(--borderRadius);
+  border-color: var(--border-color)
+}
+
+p {
+  color: #474242
+}
+
