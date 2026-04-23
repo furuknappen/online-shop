@@ -41,24 +41,44 @@
 </head>
 
 <body>
+  <section class="popular items" aria-labelledby="homepage-title">
+    <div id="carousel-container">
+      <div class="">
+        <button id="carousel-prev-btn"> prev</button>
+        <div id="carousel-cards-container">
+
+          <!-- cards goes here -->
+
+        </div>
+        <button id="carousel-next-btn"> next</button>
+      </div>
+    </div>
+  </section>
+
+  
   <section class="bestsellerDiv" aria-labelledby="homepage-title">
-      <h1 id="homepage-title">
-        Our Products
-      </h1>
- 
+    <h1 id="homepage-title">
+      Our Products
+    </h1>
 
 
-  <div id="gridContainerHomepage" role="list">
-    <!-- Cards goes here -->
-  </div>
 
- </section>
+    <div id="gridContainerHomepage" role="list">
+      <!-- Cards goes here -->
+    </div>
+    <!-- hadde vært gøy med pagination -->
+    <!-- <div class="pagination-controls">
+  <button class=""></button>
+</div> -->
 
- <section class= "popular items" aria-labelledby="homepage-title">
 
- </section>
+
+  </section>
+
+  
 
   <script type="module" src="index.js"></script>
+  <script type="module" src="scripts/carousel.js"></script>
 </body>
 
 </html>
