@@ -17,3 +17,148 @@ p {
   color: #474242
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+/*............ Large Desktops ................*/
+@media (min-width: 2550px) {
+  main {
+    padding-inline: 20rem;
+  }
+
+}
+
+/* ------------- */
+h1 {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: "inter";
+  font-weight: 400;
+  font-size: 1.4rem;
+  padding-block: 0rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--borderRadius);
+  width: 100%;
+}
+
+input:focus {
+  border-style: solid;
+  border-color: var(--mainColor);
+  outline: none;
+}
+
+.btn {
+  display: block;
+  padding: 1rem 2rem;
+  font-family: var(--second-font);
+  font-size: 1rem;
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--mainColorHover);
+  text-decoration: none;
+}
+
+.btn:active {
+  background-color: var(--mainColorClick);
+  color: white;
+  transform: translateY(2px);
+  text-decoration: none;
+}
+
+.btn::after {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* look into this - cart */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.line-through{
+  text-decoration: line-through;
+}
+
+/* Back Btn */
+.linkBackBtn {
+  color: var(--accentColor1);
+  font-family: var(--second-font);
+  display: flex;
+  align-items: center;
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+}
+
+
+.linkBackBtn:active {
+  transform: translateY(2px);
+}
+
+.icon-tabler-arrow-left {
+  height: 25px;
+  width: 25px;
+}
+
+.backBtn {
+  position: relative;
+  margin: 1rem;
+  width: 6rem;
+}
+/* Back Btn STOP */
+
+@media (min-width: 768px) {
+  .backBtn {
+    margin: 2rem;
+  }
+}

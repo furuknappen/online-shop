@@ -83,6 +83,8 @@ function createProductCards(products) {
         window.location.href = `/product/index.html?id=${product.id}`;
       });
     });
+
+
 }
 
 createProductCards(products);
@@ -118,7 +120,7 @@ function createCarousel(first12) {
   if (currentSlide == 1) {
     createCarouselCards(chunks[0]);
   }
-  return chunks
+  return chunks;
 }
 
 sortTopRated(products);

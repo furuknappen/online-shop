@@ -62,7 +62,7 @@ a:hover {
   
 }
 
-.oldPrice{
+.priceOld{
   color: gray;
   text-decoration: line-through;
     font-size: 0.9rem;
@@ -88,7 +88,7 @@ a:hover {
    font-size: 1.9rem;
   }
 
-.oldPrice{
+.priceOld{
   color: gray;
   text-decoration: line-through;
     font-size:1.1rem;
