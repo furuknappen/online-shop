@@ -1,5 +1,5 @@
 "use strict";
-import { topRatedProducts } from "../index.js";
+// import { topRatedProducts } from "../index.js";
 
 // createcarousel()
 //  const itemsPerSlide= 3;

@@ -6,11 +6,10 @@ const cardContainer = document.getElementById("gridContainerHomepage");
 // let currentCarouselSlide = 1;
 // let page = 2;
 // const carouselCardsAmount = 3;
-let currentSlide = 1;
+
 const carouselCardsContainer = document.getElementById(
   "carousel-cards-container",
 );
-export let topRatedProducts = [];
 
 async function fetchProducts() {
   try {
@@ -83,75 +82,63 @@ function createProductCards(products) {
         window.location.href = `/product/index.html?id=${product.id}`;
       });
     });
-
-
 }
 
 createProductCards(products);
 
 function sortTopRated(products) {
-  topRatedProducts = products.sort((a, b) => {
+ const sorted = products.sort((a, b) => {
     return b.rating - a.rating;
   });
-  let first12 = topRatedProducts.slice(0, 12);
-  console.log("test: ", first12);
-  createCarousel(first12);
-
-  // return first12
-  // createCarousel(topRatedProducts)
-  // createCarouselCards(topRatedProducts)
+  const topRatedProducts = sorted.slice(0, carouselCardsAmount);
+  return topRatedProducts;
 }
 
-function createCarousel(first12) {
+function createCarousel(topRatedProducts) {
   console.log("enters create carousel");
-  const cardsPerSlide = 3;
 
   const chunks = [];
 
-  for (let i = 0; i < first12.length; i += cardsPerSlide) {
-    chunks.push(first12.slice(i, i + cardsPerSlide));
+  for (let i = 0; i < topRatedProducts.length; i += cardsPerSlide) {
+    chunks.push(topRatedProducts.slice(i, i + cardsPerSlide));
   }
-  //  chunks.forEach((chunk) => {
-  //    console.log("Chunks: ", chunk)
-
-  //   return chunks
-  //   })
-
-  if (currentSlide == 1) {
-    createCarouselCards(chunks[0]);
-  }
+  console.log("Chunks: ", chunks);
   return chunks;
 }
 
-sortTopRated(products);
+const cardsPerSlide = 3;
+let currentSlide = 0;
+const carouselCardsAmount = 12
+const topRatedProducts = sortTopRated(products);
+const chunks = createCarousel(topRatedProducts);
+rerenderCarouselCards(chunks[currentSlide]);
 
 const prevBtn = document.getElementById("carousel-prev-btn");
 prevBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (currentSlide == 1) {
-    // ?????
+  if (currentSlide == 0) {
     currentSlide = chunks.length;
-    // topRatedProducts
   }
 
   currentSlide--;
-  createCarousel(first12);
+  rerenderCarouselCards(chunks[currentSlide]);
 });
 
 const nextBtn = document.getElementById("carousel-next-btn");
 nextBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (currentSlide == chunks.length) {
-    // ?????
-    currentSlide = 1;
-    createCarousel(first12);
+
+  if (currentSlide == chunks.length -1) {
+    currentSlide = -1;
   }
 
   currentSlide++;
-  createCarousel(first12);
+  rerenderCarouselCards(chunks[currentSlide]);
 });
 
-function createCarouselCards(products) {
+function rerenderCarouselCards(products) {
+  carouselCardsContainer.innerHTML = null;
+
   console.log("enters function");
   products.forEach((product) => {
     const card = document.createElement("a");
@@ -201,4 +188,3 @@ function createCarouselCards(products) {
   });
 }
 
-// export default topRatedProducts
