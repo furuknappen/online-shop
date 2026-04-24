@@ -3,14 +3,19 @@ body {
   padding: 0;
 }
 
-h1,h2,h3,p{
+h1,
+h2,
+h3,
+p {
   margin: 0;
   padding: 0;
 }
 
 .border {
   border-radius: var(--borderRadius);
-  border-color: var(--border-color)
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 1px;
 }
 
 p {
@@ -45,14 +50,6 @@ li {
   padding: 1rem;
 }
 
-/*............ Large Desktops ................*/
-@media (min-width: 2550px) {
-  main {
-    padding-inline: 20rem;
-  }
-
-}
-
 /* ------------- */
 h1 {
   font-family: var(--main-font);
@@ -61,7 +58,7 @@ h1 {
 }
 
 h2 {
-  font-family: "inter";
+  font-family: var(--main-font);
   font-weight: 400;
   font-size: 1.4rem;
   padding-block: 0rem;
@@ -126,7 +123,7 @@ button:hover {
   border: 0;
 }
 
-.line-through{
+.line-through {
   text-decoration: line-through;
 }
 
@@ -156,9 +153,20 @@ button:hover {
   width: 6rem;
 }
 /* Back Btn STOP */
-
 @media (min-width: 768px) {
   .backBtn {
     margin: 2rem;
   }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/*............ Large Desktops ................*/
+@media (min-width: 2550px) {
+  main {
+    padding-inline: 20rem;
+  }
+
 }

@@ -106,12 +106,36 @@ function createCarousel(topRatedProducts) {
   return chunks;
 }
 
-const cardsPerSlide = 3;
+let cardsPerSlide = 3;
+const screenWidth = window.innerWidth
+const mobileMaxWidth = 768
+console.log(screenWidth)
+
+function updateCardsPerSlide(){
+if (screenWidth < mobileMaxWidth) {
+ cardsPerSlide = 2;
+ console.log("less than")
+}
+else{
+ cardsPerSlide = 3; 
+  console.log("more than")
+}
+
+}
+
+updateCardsPerSlide()
+
+
 let currentSlide = 0;
 const carouselCardsAmount = 12
 const topRatedProducts = sortTopRated(products);
 const chunks = createCarousel(topRatedProducts);
 rerenderCarouselCards(chunks[currentSlide]);
+
+
+window.addEventListener('resize', updateCardsPerSlide)
+
+
 
 const prevBtn = document.getElementById("carousel-prev-btn");
 prevBtn.addEventListener("click", (e) => {
@@ -138,11 +162,11 @@ nextBtn.addEventListener("click", (e) => {
 
 function rerenderCarouselCards(products) {
   carouselCardsContainer.innerHTML = null;
-
   console.log("enters function");
   products.forEach((product) => {
     const card = document.createElement("a");
     card.classList.add("card");
+     card.id = "carousel-card";
 
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("imgDiv");
@@ -185,6 +209,11 @@ function rerenderCarouselCards(products) {
     cardTextDiv.appendChild(priceContainer);
 
     carouselCardsContainer.appendChild(card);
+
+    
+    card.addEventListener("click", () => {
+      window.location.href = `product/index.html?id=${product.id}`;
+    });
   });
 }
 
