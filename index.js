@@ -15,8 +15,11 @@ async function fetchProducts() {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      // "Failed to fetch (" + response.status + "), with message: " response.message
-      throw new Error("Something is wrong: ", response.status);
+      // "Failed to fetch (" + response.status + "), with message: " response.message    
+      // BK Riktig plass??
+      cardContainer.innerHTML= '<p role="alert" >Unable to load products. Please try again later. </p>'
+      throw new Error(`Failed to fetch products:  (${response.status})`);
+  
     }
     const result = await response.json();
 
@@ -35,6 +38,8 @@ function createProductCards(products) {
     .forEach((product) => {
       const card = document.createElement("a");
       card.classList.add("card");
+      card.setAttribute("role", "listitem")
+  
 
       const imgDiv = document.createElement("div");
       imgDiv.classList.add("imgDiv");
@@ -66,13 +71,15 @@ function createProductCards(products) {
         const oldPrice = document.createElement("p");
         oldPrice.classList.add("oldPrice");
         oldPrice.textContent = product.price + ",-";
-
+        card.setAttribute("aria-label", `View ${product.title}, original price ${product.price}, sale price ${product.discountedPrice}`)
         priceContainer.appendChild(price);
         priceContainer.appendChild(oldPrice);
       } else {
         price.textContent = product.price + ",-";
         priceContainer.appendChild(price);
+        card.setAttribute("aria-label", `View ${product.title},  price ${product.price}`)
       }
+      card.setAttribute("aria-label", `View ${product.title}, original`)
 
       cardTextDiv.appendChild(priceContainer);
 
@@ -99,7 +106,11 @@ function createCarousel(topRatedProducts) {
 
   const chunks = [];
 
-  for (let i = 0; i < topRatedProducts.length; i += cardsPerSlide) {
+  for (
+    let i = 0; // start
+    i < topRatedProducts.length; // Kjør så lenge dette er sant
+    i += cardsPerSlide // for hver loop, øk `i`med `cardsPerSlide`
+  ) {
     chunks.push(topRatedProducts.slice(i, i + cardsPerSlide));
   }
   console.log("Chunks: ", chunks);
@@ -135,15 +146,23 @@ rerenderCarouselCards(chunks[currentSlide]);
 
 window.addEventListener('resize', updateCardsPerSlide)
 
+function ariaCurrentSlideInfo() {
+  const currentNumberSlides = carouselCardsAmount / cardsPerSlide
+  console.log(currentSlide + 1)
+  // need an css class for this
+  document.getElementById("carousel-status").textContent= `Showing slide ${currentSlide + 1} of ${currentNumberSlides }`
+}
 
+ariaCurrentSlideInfo()
 
 const prevBtn = document.getElementById("carousel-prev-btn");
 prevBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  
   if (currentSlide == 0) {
     currentSlide = chunks.length;
   }
-
+ariaCurrentSlideInfo()
   currentSlide--;
   rerenderCarouselCards(chunks[currentSlide]);
 });
@@ -156,10 +175,12 @@ nextBtn.addEventListener("click", (e) => {
     currentSlide = -1;
   }
 
+  ariaCurrentSlideInfo()
   currentSlide++;
   rerenderCarouselCards(chunks[currentSlide]);
 });
 
+/** Clear container and render carusell */
 function rerenderCarouselCards(products) {
   carouselCardsContainer.innerHTML = null;
   console.log("enters function");
@@ -174,7 +195,7 @@ function rerenderCarouselCards(products) {
     const image = document.createElement("img");
 
     image.src = product.image.url;
-    image.alt = product.image.alt;
+    image.alt = product.image.alt || product.title;
     image.classList.add("cardImg");
     imgDiv.appendChild(image);
     card.appendChild(imgDiv);

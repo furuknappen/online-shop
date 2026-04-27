@@ -61,15 +61,16 @@
         <h2 id="carousel-title"> Top rated products</h2>
       </div>
       <div class="carousel-btn-card-container">
-        <button id="carousel-prev-btn" class="carousel-btn">
+        <button id="carousel-prev-btn" class="carousel-btn" aria-label="Previous Slide" type="button">
           <img src="assets/svg/arrow-left-simple.svg" alt="" aria-hidden="true">
         </button>
+        <div id="carousel-status" aria-live="polite" aria-atomic="true" role="status"> </div>
         <div id="carousel-cards-container">
 
           <!-- cards goes here -->
 
         </div>
-        <button id="carousel-next-btn" class="carousel-btn">
+        <button id="carousel-next-btn" class="carousel-btn" aria-label="Next Slide" type="button">
           <img src="assets/svg/arrow-right-simple.svg" alt="" aria-hidden="true">
         </button>
       </div>

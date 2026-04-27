@@ -111,6 +111,11 @@ button:hover {
   cursor: pointer;
 }
 
+button:focus-visible{
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
 /* look into this - cart */
 .visually-hidden {
   position: absolute;
