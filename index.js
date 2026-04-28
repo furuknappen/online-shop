@@ -15,11 +15,12 @@ async function fetchProducts() {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      // "Failed to fetch (" + response.status + "), with message: " response.message    
+      // "Failed to fetch (" + response.status + "), with message: " response.message
       // BK Riktig plass??
-      cardContainer.innerHTML= '<p role="alert" >Unable to load products. Please try again later. </p>'
+      //TODO: BK
+      cardContainer.innerHTML =
+        '<p role="alert" >Unable to load products. Please try again later. </p>';
       throw new Error(`Failed to fetch products:  (${response.status})`);
-  
     }
     const result = await response.json();
 
@@ -27,7 +28,11 @@ async function fetchProducts() {
     return products;
   } catch (error) {
     // "Failed to fetch" + error.message
-    console.error("Fetch error: ", error);
+    //TODO: BK - kan de være samme?
+    cardContainer.innerHTML =
+      '<p role="alert" >Unable to load products. Please try again later. </p>';
+
+    // console.error("Fetch error: ", error);
   }
 }
 const products = await fetchProducts();
@@ -36,10 +41,10 @@ function createProductCards(products) {
   products
     .filter((_, i) => i <= 11)
     .forEach((product) => {
+      const listItem = document.createElement("li");
       const card = document.createElement("a");
       card.classList.add("card");
-      card.setAttribute("role", "listitem")
-  
+      card.setAttribute("role", "listitem");
 
       const imgDiv = document.createElement("div");
       imgDiv.classList.add("imgDiv");
@@ -55,7 +60,7 @@ function createProductCards(products) {
       const cardTextDiv = document.createElement("div");
       cardTextDiv.classList.add("cardTextDiv");
       card.appendChild(cardTextDiv);
-
+      card.href = `product/index.html?id=${product.id}`;
       const name = document.createElement("h2");
       name.classList.add("itemName");
       name.textContent = product.title;
@@ -65,36 +70,38 @@ function createProductCards(products) {
       priceContainer.classList.add("priceContainer");
       const price = document.createElement("p");
       price.classList.add("priceNormal");
+
+      let ariaLabel;
       if (product.discountedPrice < product.price) {
         price.textContent = product.discountedPrice + ",-";
         // price.classList.add("priceSale");
         const oldPrice = document.createElement("p");
         oldPrice.classList.add("oldPrice");
         oldPrice.textContent = product.price + ",-";
-        card.setAttribute("aria-label", `View ${product.title}, original price ${product.price}, sale price ${product.discountedPrice}`)
+        ariaLabel = `View ${product.title}, original price ${product.price}, sale price ${product.discountedPrice}`;
         priceContainer.appendChild(price);
         priceContainer.appendChild(oldPrice);
       } else {
         price.textContent = product.price + ",-";
         priceContainer.appendChild(price);
-        card.setAttribute("aria-label", `View ${product.title},  price ${product.price}`)
+        ariaLabel = `View ${product.title},  price ${product.price}`;
       }
-      card.setAttribute("aria-label", `View ${product.title}, original`)
+      card.setAttribute("aria-label", ariaLabel);
 
       cardTextDiv.appendChild(priceContainer);
+      listItem.appendChild(card);
+      cardContainer.appendChild(listItem);
 
-      cardContainer.appendChild(card);
-
-      card.addEventListener("click", () => {
-        window.location.href = `/product/index.html?id=${product.id}`;
-      });
+      // card.addEventListener("click", () => {
+      //   window.location.href = `/product/index.html?id=${product.id}`;
+      // });
     });
 }
 
 createProductCards(products);
 
 function sortTopRated(products) {
- const sorted = products.sort((a, b) => {
+  const sorted = products.sort((a, b) => {
     return b.rating - a.rating;
   });
   const topRatedProducts = sorted.slice(0, carouselCardsAmount);
@@ -102,8 +109,6 @@ function sortTopRated(products) {
 }
 
 function createCarousel(topRatedProducts) {
-  console.log("enters create carousel");
-
   const chunks = [];
 
   for (
@@ -113,56 +118,49 @@ function createCarousel(topRatedProducts) {
   ) {
     chunks.push(topRatedProducts.slice(i, i + cardsPerSlide));
   }
-  console.log("Chunks: ", chunks);
   return chunks;
 }
 
 let cardsPerSlide = 3;
-const screenWidth = window.innerWidth
-const mobileMaxWidth = 768
-console.log(screenWidth)
+const screenWidth = window.innerWidth;
+const mobileMaxWidth = 768;
 
-function updateCardsPerSlide(){
-if (screenWidth < mobileMaxWidth) {
- cardsPerSlide = 2;
- console.log("less than")
-}
-else{
- cardsPerSlide = 3; 
-  console.log("more than")
+function updateCardsPerSlide() {
+  if (screenWidth < mobileMaxWidth) {
+    cardsPerSlide = 2;
+  } else {
+    cardsPerSlide = 3;
+  }
 }
 
-}
-
-updateCardsPerSlide()
-
+updateCardsPerSlide();
 
 let currentSlide = 0;
-const carouselCardsAmount = 12
+const carouselCardsAmount = 12;
 const topRatedProducts = sortTopRated(products);
 const chunks = createCarousel(topRatedProducts);
 rerenderCarouselCards(chunks[currentSlide]);
 
-
-window.addEventListener('resize', updateCardsPerSlide)
+window.addEventListener("resize", updateCardsPerSlide);
 
 function ariaCurrentSlideInfo() {
-  const currentNumberSlides = carouselCardsAmount / cardsPerSlide
-  console.log(currentSlide + 1)
+  const currentNumberSlides = carouselCardsAmount / cardsPerSlide;
+  console.log(currentSlide + 1);
   // need an css class for this
-  document.getElementById("carousel-status").textContent= `Showing slide ${currentSlide + 1} of ${currentNumberSlides }`
+  document.getElementById("carousel-status").textContent =
+    `Showing slide ${currentSlide + 1} of ${currentNumberSlides}`;
 }
 
-ariaCurrentSlideInfo()
+ariaCurrentSlideInfo();
 
 const prevBtn = document.getElementById("carousel-prev-btn");
 prevBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  
+
   if (currentSlide == 0) {
     currentSlide = chunks.length;
   }
-ariaCurrentSlideInfo()
+  ariaCurrentSlideInfo();
   currentSlide--;
   rerenderCarouselCards(chunks[currentSlide]);
 });
@@ -171,11 +169,11 @@ const nextBtn = document.getElementById("carousel-next-btn");
 nextBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (currentSlide == chunks.length -1) {
+  if (currentSlide == chunks.length - 1) {
     currentSlide = -1;
   }
 
-  ariaCurrentSlideInfo()
+  ariaCurrentSlideInfo();
   currentSlide++;
   rerenderCarouselCards(chunks[currentSlide]);
 });
@@ -185,9 +183,11 @@ function rerenderCarouselCards(products) {
   carouselCardsContainer.innerHTML = null;
   console.log("enters function");
   products.forEach((product) => {
+    const listItem = document.createElement("li");
     const card = document.createElement("a");
     card.classList.add("card");
-     card.id = "carousel-card";
+    card.id = "carousel-card";
+    card.href = `product/index.html?id=${product.id}`;
 
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("imgDiv");
@@ -213,28 +213,29 @@ function rerenderCarouselCards(products) {
     priceContainer.classList.add("priceContainer");
     const price = document.createElement("p");
     price.classList.add("priceNormal");
+    let ariaLabel;
     if (product.discountedPrice < product.price) {
       price.textContent = product.discountedPrice + ",-";
       // price.classList.add("priceSale");
       const oldPrice = document.createElement("p");
       oldPrice.classList.add("oldPrice");
       oldPrice.textContent = product.price + ",-";
-
+      ariaLabel = `View ${product.title}, original price ${product.price}, sale price ${product.discountedPrice}`;
       priceContainer.appendChild(price);
       priceContainer.appendChild(oldPrice);
     } else {
       price.textContent = product.price + ",-";
       priceContainer.appendChild(price);
+      ariaLabel = `View ${product.title},  price ${product.price}`;
     }
+    card.setAttribute("aria-label", ariaLabel);
 
     cardTextDiv.appendChild(priceContainer);
+    listItem.appendChild(card);
+    carouselCardsContainer.appendChild(listItem);
 
-    carouselCardsContainer.appendChild(card);
-
-    
-    card.addEventListener("click", () => {
-      window.location.href = `product/index.html?id=${product.id}`;
-    });
+    // card.addEventListener("click", () => {
+    //   window.location.href = `product/index.html?id=${product.id}`;
+    // });
   });
 }
-

@@ -10,9 +10,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+ /* border-radius: var(--borderRadius); */
 .border {
-  border-radius: var(--borderRadius);
+ 
   border-color: var(--border-color);
   border-style: solid;
   border-width: 1px;
@@ -30,6 +30,7 @@ p {
 
 a {
   text-decoration: none;
+
 }
 
 
@@ -50,6 +51,15 @@ li {
   padding: 1rem;
 }
 
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding:0;
+  overflow: hidden;
+  clip-path: inset(50%);
+white-space: nowrap;
+}
 /* ------------- */
 h1 {
   font-family: var(--main-font);
@@ -74,7 +84,7 @@ input {
 
 input:focus {
   border-style: solid;
-  border-color: var(--mainColor);
+  border-color: var(--primary-color);
   outline: none;
 }
 
@@ -83,7 +93,7 @@ input:focus {
   padding: 1rem 2rem;
   font-family: var(--second-font);
   font-size: 1rem;
-  background-color: var(--mainColor);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   cursor: pointer;
@@ -92,12 +102,12 @@ input:focus {
 }
 
 .btn:hover {
-  background-color: var(--mainColorHover);
+  background-color: var(--primary-color-hover);
   text-decoration: none;
 }
 
 .btn:active {
-  background-color: var(--mainColorClick);
+  background-color: var(--primary-color-click);
   color: white;
   transform: translateY(2px);
   text-decoration: none;
@@ -115,7 +125,10 @@ button:focus-visible{
   outline: 3px solid #4a90e2;
   outline-offset: 2px;
 }
-
+a:focus-visible{
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
 /* look into this - cart */
 .visually-hidden {
   position: absolute;

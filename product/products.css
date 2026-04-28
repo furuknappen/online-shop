@@ -71,14 +71,14 @@
 }
 
 .size-radio:checked+.sizeBtn {
-  background-color: var(--mainColor);
+  background-color: var(--primary-color);
 } */
 
 
 /* .sizeBtn {
   padding: 0.5rem;
   background-color: white;
-  border-color: var(--mainColor);
+  border-color: var(--primary-color);
   border-radius: var(--borderRadius);
   color: black;
   border-style: solid;
