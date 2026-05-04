@@ -13,7 +13,8 @@
   --primary-color: #09549C;
   --primary-color-hover: #106BC0;
   --primary-color-click: #094177;
-  --text-color-dark: #474242;
+  /* --text-color-dark: #474242; */
+    --text-color-dark: #2C2A2A;
   --text-color-light: #f4f4f4;
 
 }

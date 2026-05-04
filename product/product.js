@@ -31,9 +31,9 @@ async function displayProduct() {
   document.querySelector(".item-tags").textContent = product.tags;
   // PRICE
   const priceContainer = document.querySelector(".priceContainer");
-  priceContainer.classList.add("priceContainer");
+  priceContainer.classList.add("priceContainerCart");
   const price = document.createElement("p");
-  price.classList.add("priceNormal");
+  price.classList.add("priceNormalCart");
   if (product.discountedPrice < product.price) {
     price.textContent = product.discountedPrice + ",-";
     const oldPrice = document.createElement("p");
@@ -50,23 +50,25 @@ async function displayProduct() {
   const noSizeError = document.getElementById("noSizeError");
 
   // fjerne no size og endre sånn at hvis de ikke velger quantity s blir det automatisk 1
-  document.querySelectorAll("input[name='size']").forEach((radio) => {
-    radio.addEventListener("change", () => {
-      noSizeError.style.display = "none";
-    });
-  });
+  // document.querySelectorAll("input[name='size']").forEach((radio) => {
+  //   radio.addEventListener("change", () => {
+  //     noSizeError.style.display = "none";
+  //   });
+  // });
 
   addToCartBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const selectedSize = document.querySelector("input[name='size']:checked");
+    // const selectedSize = document.querySelector("input[name='size']:checked");
 
-    if (!selectedSize) {
-      noSizeError.style.display = "flex";
-      return;
-    }
-    noSizeError.style.display = "none";
-    addToCart(item, selectedSize.value);
+    // if (!selectedSize) {
+    //   noSizeError.style.display = "flex";
+    //   return;
+    // }
+    // noSizeError.style.display = "none";
+    // addToCart(item, selectedSize.value);
+    addToCart(product);
+
   });
 
 // quantity input
@@ -105,35 +107,43 @@ async function displayProduct() {
   });
 }
 
-function addToCart(item, size) {
+function addToCart(product, size) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartItem = {
-    ...item,
-    selectedSize: size,
-  };
 
-  cart.push(cartItem);
+  const existingProduct = cart.find(item => item.id === product.id);
+  
+
+  if (existingProduct) {
+    existingProduct.quantity += 1
+  }
+  else {
+    cart.push({ ...product,
+    quantity: 1});
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
-  displayToastNotification(item);
+  displayToastNotification(product);
   setTimeout(() => {
     removeToastNotification();
   }, 2000);
 
   rerenderCartNotification();
+
+  console.log("cart: ", cart)
 }
 
 await displayProduct();
 const cartContent = localStorage.getItem("cart");
 
 // TOAST NOTIFICATION
-function displayToastNotification(item) {
+function displayToastNotification(product) {
   const toastDiv = document.createElement("div");
   toastDiv.classList.add("toastNotification");
 
   const checkmark = document.createElement("div");
   checkmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>`;
   const info = document.createElement("p");
-  info.textContent = `You have successfully added ${item.title} to your cart!`;
+  info.textContent = `You have successfully added ${product.title} to your cart!`;
 
   toastDiv.append(checkmark, info);
   document.querySelector(".flexDivItemPage").append(toastDiv);

@@ -10,7 +10,7 @@ const cardContainer = document.getElementById("gridContainerHomepage");
 const carouselCardsContainer = document.getElementById(
   "carousel-cards-container",
 );
-
+// debugger;
 async function fetchProducts() {
   try {
     const response = await fetch(url);
@@ -110,7 +110,6 @@ function sortTopRated(products) {
 
 function createCarousel(topRatedProducts) {
   const chunks = [];
-
   for (
     let i = 0; // start
     i < topRatedProducts.length; // Kjør så lenge dette er sant

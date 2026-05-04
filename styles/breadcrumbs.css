@@ -1,0 +1,58 @@
+
+/* -------- breadcrumbs -------- */
+.navBreadCrumbs {
+  margin: 1rem;
+}
+
+.breadcrumbs a {
+  font-family: var(--text-font);
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a:hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.breadcrumbs {
+  list-style: none;
+  display: flex;
+  gap: 0.1rem;
+}
+
+.breadcrumbs li+li::before {
+  content: ">";
+  margin: 0.1rem;
+  font-family: var(--text-font);
+  color: rgb(78, 78, 78);
+}
+
+.breadcrumbs li:last-child::after {
+  content: "";
+  margin-left: 0.5rem;
+}
+
+.breadcrumbs a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+
+  .breadcrumbs a {
+    font-family: var(--text-font);
+    color: gray;
+    font-size: 1rem;
+  }
+
+  .breadcrumbs {
+    gap: 0.2rem;
+  }
+
+  .breadcrumbs li+li::before {
+    margin: 0.6rem;
+  }
+} 
