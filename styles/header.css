@@ -73,10 +73,6 @@ header {
   display: none;
 }
 
-.cartBtn {
-  position: relative;
-}
-
 .cartNotification {
   position: absolute;
   bottom: -9px;

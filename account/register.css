@@ -1,0 +1,81 @@
+.form-main-div {
+  display: flex;
+  justify-content: center;
+  padding-block: 4rem;
+  color: var(--text-color-dark);
+
+  position: relative;
+}
+
+.register-div {
+  width: 85vw
+}
+
+.register-div h1 {
+  margin-bottom: 2rem
+}
+
+.register-div label {
+  font-family: var(--text-font);
+}
+
+
+.form-group {
+  /* border: 2px solid red; */
+  margin-top: 1rem
+}
+
+.bottomButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-block: 2rem;
+  align-items: center;
+  font-family: var(--main-font);
+  margin-top: 4rem
+}
+
+.linkBackBtn {
+  text-decoration: underline;
+
+}
+
+.checkoutBtn {
+  font-size: 1.5rem;
+}
+
+.alert {
+  display: block;
+  /* height: 2rem; */
+  background-color: rgb(246, 201, 201);
+  color: var(--red);
+  font-family: var(--text-font);
+  font-size: 0.8rem;
+  border-radius: var(--borderRadius);
+  padding: 0.5rem
+}
+
+.alert-info {
+  display: block;
+  height: 2rem;
+  /* border: 2px solid red; */
+  color: var(--gray-light);
+  font-family: var(--text-font);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+
+}
+
+#password-match-error {}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+
+  .register-div {
+    width: 30rem;
+    padding: 3rem;
+    border-radius: var(--borderRadius);
+    border: 1px solid var(--border-color)
+  }
+
+
+}

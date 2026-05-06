@@ -7,8 +7,15 @@
   --main-font: "Barlow Condensed";
   --text-font: "Inter";
 
-  --red: #F81B1B;
+  --red: #ffa5a5;
+  --red-dark: #F81B1B;
+  --green: #6ed783;
+  --green-dark: #027b1a;
+  /* --yellow: #FFC942; */
+  --yellow: #ffd466;
+  --yellow-dark: #ed6300;
   --border-color: #BAB8B8;
+  --gray-light: #808080;
   --main-color:#373535;
   --primary-color: #09549C;
   --primary-color-hover: #106BC0;

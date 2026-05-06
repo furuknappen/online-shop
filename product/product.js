@@ -1,6 +1,8 @@
+import { toastNotification } from "../scripts/toastNotification.js";
+import {rerenderCartNotification } from "../scripts/header.js";
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
-
+//TODO: add share btn
 const url = "https://v2.api.noroff.dev/online-shop/";
 
 async function fetchData() {
@@ -18,7 +20,7 @@ async function fetchData() {
   }
 }
 
-// fetchData()
+
 
 async function displayProduct() {
   const product = await fetchData();
@@ -29,6 +31,7 @@ async function displayProduct() {
   document.querySelector(".h1Itemname").textContent = product.title;
   document.querySelector(".infoText").textContent = product.description;
   document.querySelector(".item-tags").textContent = product.tags;
+
   // PRICE
   const priceContainer = document.querySelector(".priceContainer");
   priceContainer.classList.add("priceContainerCart");
@@ -68,19 +71,12 @@ async function displayProduct() {
     // noSizeError.style.display = "none";
     // addToCart(item, selectedSize.value);
     addToCart(product);
-
   });
 
-// quantity input
+  // quantity input
 
- document.createElement("div")
- document.create
-
-
-
-
-
-
+  document.createElement("div");
+  document.create;
 
   // Reviews
   if (product.reviews == 0) {
@@ -107,48 +103,24 @@ async function displayProduct() {
   });
 }
 
-function addToCart(product, size) {
+function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  const existingProduct = cart.find(item => item.id === product.id);
-  
+  const existingProduct = cart.find((item) => item.id === product.id);
 
   if (existingProduct) {
-    existingProduct.quantity += 1
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
   }
-  else {
-    cart.push({ ...product,
-    quantity: 1});
-  }
-
   localStorage.setItem("cart", JSON.stringify(cart));
-  displayToastNotification(product);
-  setTimeout(() => {
-    removeToastNotification();
-  }, 2000);
 
+  const toastMessage = `You have successfully added ${product.title} to your cart!`;
+
+  toastNotification(toastMessage, "success");
   rerenderCartNotification();
-
-  console.log("cart: ", cart)
+  console.log("cart: ", cart);
 }
 
 await displayProduct();
 const cartContent = localStorage.getItem("cart");
-
-// TOAST NOTIFICATION
-function displayToastNotification(product) {
-  const toastDiv = document.createElement("div");
-  toastDiv.classList.add("toastNotification");
-
-  const checkmark = document.createElement("div");
-  checkmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>`;
-  const info = document.createElement("p");
-  info.textContent = `You have successfully added ${product.title} to your cart!`;
-
-  toastDiv.append(checkmark, info);
-  document.querySelector(".flexDivItemPage").append(toastDiv);
-}
-
-function removeToastNotification() {
-  document.querySelector(".toastNotification").remove();
-}

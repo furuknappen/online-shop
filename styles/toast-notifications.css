@@ -1,0 +1,61 @@
+.toast-error{
+  background-color: var(--red);
+ color: var(--red-dark);
+}
+
+.toast-warning{
+  background-color: var(--yellow);
+  color:  var(--yellow-dark);
+}
+
+.toast-success{
+  background-color: var(--green);
+  color: var(--green-dark);
+}
+
+.toast-error svg{
+  stroke: var(--red-dark);
+}
+
+.toast-warning svg{
+   stroke: var(--yellow-dark);
+}
+
+.toast-success svg{
+  stroke: var(--green-dark);
+ 
+}
+
+.toastNotification {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 3rem;
+  right: 0.5rem;
+  padding: 1.5rem;
+  width: 95%;
+  border-radius: var(--borderRadius);
+  font-family: var(--text-font);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.toastNotification svg {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  /* stroke: var(--yellow-dark) */
+}
+
+
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+
+  .toastNotification {
+    width: 25rem;
+    position: absolute;
+    top: 1rem
+  }
+
+}

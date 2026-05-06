@@ -16,11 +16,11 @@
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Cositas">
- 
+
   <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
- <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png" >
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
 
 
   <link rel="stylesheet" href="../variables.css">
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="products.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/toast-notifications.css">
   <title>Cositas | Cart</title>
 </head>
 
@@ -44,27 +45,29 @@
       <!-- <a href="comingsoon-page.html" aria-label="Search">
         <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
       </a> -->
-     <a href="comingsoon-page.html" aria-label="Profile" rel="noopener noreferrer">
+      <a href="comingsoon-page.html" aria-label="Profile" rel="noopener noreferrer">
         <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
       </a>
-      <a class="cartBtn" href="cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+      <a href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
         <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
       </a>
     </div>
 
-<!-- Hamburger menu -->
+    <!-- Hamburger menu -->
     <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
-        <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true"> 
+      <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true">
     </button>
 
-      <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
-        <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-        <a class="navLink" href="../cart/index.html" rel="noopener noreferrer">Shoppingcart</a>
-        <a class="navLink" href="../comingsoon-page.html" rel="noopener noreferrer">Profile</a>
-      </nav>
+    <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+      <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
+      <a class="navLink" href="../cart/index.html" rel="noopener noreferrer">Shoppingcart</a>
+      <a class="navLink" href="../comingsoon-page.html" rel="noopener noreferrer">Profile</a>
+    </nav>
   </header>
-  <main class="flexDivItemPage">
+
+
+  <main class="flexDivItemPage toast-parent">
     <a class="backBtn linkBackBtn" href="../index.html">
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -122,7 +125,7 @@
 
 
   <script type="module" src="product.js"></script>
-    <script type="module" src="../scripts/header.js"></script>
+  <script type="module" src="../scripts/header.js"></script>
 </body>
 
 </html>

@@ -93,9 +93,6 @@ h2 {
 
 .quantityInput {
   width: 2rem;
-  /* field-sizing: content;
- min-width: 2rem;
- max-width: 3rem; */
   height: 10px;
   border-color: var(--border-color);
   font-size: 0.8rem;

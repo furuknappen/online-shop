@@ -1,5 +1,6 @@
 "use strict";
 // TODO: må input ha forskjellige navn?
+//TODO: å skrive inn i quantity inputfeltet fungerer ikke 
 
 const productDisplay = document.querySelector(".productContainer");
 
