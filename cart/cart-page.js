@@ -1,7 +1,7 @@
 "use strict";
 // TODO: må input ha forskjellige navn?
-//TODO: å skrive inn i quantity inputfeltet fungerer ikke 
-
+//TODO: å skrive inn i quantity inputfeltet fungerer ikke
+import { createModal } from "../scripts/modal.js";
 const productDisplay = document.querySelector(".productContainer");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -24,17 +24,15 @@ function rerenderCart() {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
   totalPrice = 0;
   totalDiscount = 0;
-  
-if (cart.length == 0) {
-  const noItems = document.createElement("p");
-  noItems.classList.add("noItems");
-  noItems.textContent = "No items in cart";
-  document.querySelector(".productContainer").append(noItems);
-  document.querySelector("#goToCheckout").classList.add("disabled");
-  document.querySelector("#goToCheckout").title = "No item in cart";
-}
 
-
+  if (cart.length == 0) {
+    const noItems = document.createElement("p");
+    noItems.classList.add("noItems");
+    noItems.textContent = "No items in cart";
+    document.querySelector(".productContainer").append(noItems);
+    document.querySelector("#goToCheckout").classList.add("disabled");
+    document.querySelector("#goToCheckout").title = "No item in cart";
+  }
 
   cart.forEach((item, index) => {
     console.log(item.quantity);
@@ -48,35 +46,44 @@ if (cart.length == 0) {
     const cartText = document.createElement("div");
     cartText.classList.add("cartText");
 
-    // let size = document.createElement("p");
-    // size.textContent = `Size: ${item.selectedSize}`;
-
     const quantityDiv = document.createElement("div");
-    quantityDiv.classList.add("quantityDiv")
-    //  let quantity = document.createElement("p");
-    //   quantity.textContent = `Quantity: ${item.quantity}`;
+    quantityDiv.classList.add("quantityDiv");
 
     const quantityInput = document.createElement("input");
-    quantityInput.id = "quantityInputCart"
-    quantityInput.classList.add("quantityInput")
+    quantityInput.id = "quantityInputCart" + index;
+    quantityInput.classList.add("quantityInput");
     quantityInput.value = item.quantity;
 
+    quantityInput.addEventListener("blur", (e) => {
+      e.preventDefault();
+      updateQuantityInput(index);
+    });
+
+   quantityInput.addEventListener("keydown", (e) => {
+     if(e.key === "Enter"){
+      e.preventDefault(); 
+      quantityInput.blur()
+     }
+    });
+
+
+
+    
+
     const reduceQuantityBtn = document.createElement("button");
-    reduceQuantityBtn.classList.add("reduceQuantityBtn", "quantityBtn")
+    reduceQuantityBtn.classList.add("reduceQuantityBtn", "quantityBtn");
     reduceQuantityBtn.innerHTML = `<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>`;
 
     reduceQuantityBtn.addEventListener("click", () => {
-      // const newQuantity =
       reduceQuantity(item, index);
-      // item.quantity = newQuantity;
     });
 
     const addQuantityBtn = document.createElement("button");
-       addQuantityBtn.classList.add("addQuantityBtn", "quantityBtn")
+    addQuantityBtn.classList.add("addQuantityBtn", "quantityBtn");
     addQuantityBtn.innerHTML = `<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>`;
 
     addQuantityBtn.addEventListener("click", () => {
-    addQuantity(item, index);
+      addQuantity(item, index);
     });
 
     quantityDiv.append(reduceQuantityBtn, quantityInput, addQuantityBtn);
@@ -90,25 +97,23 @@ if (cart.length == 0) {
     if (item.discountedPrice < item.price) {
       price.textContent = item.discountedPrice + ",-";
       totalDiscount += (item.price - item.discountedPrice) * item.quantity;
-      console.log("total discount",totalDiscount)
-      totalPrice += (item.discountedPrice * item.quantity)
+      console.log("total discount", totalDiscount);
+      totalPrice += item.discountedPrice * item.quantity;
 
-const oldPrice = document.createElement("p");
-    oldPrice.classList.add("priceOld");
-    oldPrice.textContent = item.price + ",-";
+      const oldPrice = document.createElement("p");
+      oldPrice.classList.add("priceOld");
+      oldPrice.textContent = item.price + ",-";
 
-    priceContainer.appendChild(price);
-    priceContainer.appendChild(oldPrice);
-
+      priceContainer.appendChild(price);
+      priceContainer.appendChild(oldPrice);
     } else {
       price.textContent = item.price + ",-";
       priceContainer.appendChild(price);
-      totalPrice += item.price * quantity
+      totalPrice += item.price * quantityInput.value;
     }
 
-
     const title = document.createElement("p");
-    title.classList.add("itemInfo" , "product-title");
+    title.classList.add("itemInfo", "product-title");
     title.textContent = item.title;
 
     const trashBtn = document.createElement("button");
@@ -126,20 +131,24 @@ const oldPrice = document.createElement("p");
             <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
           </svg>`;
 
-    trashBtn.addEventListener("click", () => {
-      removeItemFromCart(index);
+    trashBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const heading = "Delete?";
+      const message = `Do you want to remove ${item.title} from your shopping cart?`;
+      const actionBtn = "Delete";
+      createModal(heading, message, actionBtn, removeItemFromCart, index);
     });
 
-   
     productLine.append(image, cartText);
-    cartText.append(title,priceContainer, quantityDiv);
+    cartText.append(title, priceContainer, quantityDiv);
     productLine.append(trashBtn);
     productDisplay.appendChild(productLine);
-    console.log("total price is" , totalPrice)
+    console.log("total price is", totalPrice);
     document.querySelector("#goToCheckout").href = "checkout-page.html";
   });
-// TODO: total price does not work! BK pls
-  document.querySelector(".discounted").textContent = totalDiscount.toFixed(2) + " ,-";
+  // TODO: total price does not work! BK pls
+  document.querySelector(".discounted").textContent =
+    totalDiscount.toFixed(2) + " ,-";
   document.querySelector(".totalPrice").textContent = totalPrice.toFixed(2);
 }
 
@@ -154,21 +163,44 @@ function removeItemFromCart(index) {
 
 function reduceQuantity(item, index) {
   console.log("click down");
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const input = document.getElementById("quantityInputCart" + index);
 
-  if (cart[index].quantity <= 1) {
-    removeItemFromCart(index);
+  const oldValue = input.value;
+  const newValue = Number(oldValue) - 1;
+
+  if (newValue <= 1) {
+  const heading = "Delete?";
+      const message = `Do you want to remove ${item.title} from your shopping cart?`;
+      const actionBtn = "Delete";
+      createModal(heading, message, actionBtn, removeItemFromCart, index);
   } else {
-    cart[index].quantity -= 1;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    input.value = newValue;
+    cart[index].quantity = newValue;
     localStorage.setItem("cart", JSON.stringify(cart));
     rerenderCart();
   }
 }
 
 function addQuantity(item, index) {
-  console.log("click up");
+  const input = document.getElementById("quantityInputCart" + index);
+
+  const oldValue = input.value;
+  const newValue = Number(oldValue) + 1;
+  input.value = newValue;
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart[index].quantity += 1;
+  cart[index].quantity = newValue;
+
   localStorage.setItem("cart", JSON.stringify(cart));
   rerenderCart();
+}
+
+function updateQuantityInput(index) {
+  const input = document.getElementById("quantityInputCart" + index);
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart[index].quantity = Number(input.value);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 }

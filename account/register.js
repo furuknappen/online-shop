@@ -1,6 +1,5 @@
 "use strict";
-import { toastNotification } from "../scripts/toastNotification.js";
-
+// import { toastNotification } from "../scripts/toastNotification.js";
 
 //TODO:post to API
 //TODO: check that the password contains 8 characters and bith numbers and letters.
@@ -8,6 +7,7 @@ import { toastNotification } from "../scripts/toastNotification.js";
 //TODO: redirect to homeplage.
 //TODO: make profile btn in header go to sign in page when pressed and not logged in.
 //TODO: make profile page go tp a profile page when pressed and logged in.
+
 
 // The URL for the register endpoint
 // const registerUrl= "https://v2.api.noroff.dev/auth/register";
@@ -32,6 +32,7 @@ import { toastNotification } from "../scripts/toastNotification.js";
 // console.log(userData)
 //   return userData
 // }
+const userInfo = ""
 
 async function registerUser(url, userData) {
   // clearErrormessage()
@@ -79,7 +80,7 @@ async function registerUser(url, userData) {
 // Call the function to register the user
 
 const registersubmitBtn = document.getElementById("registerBtn");
-registersubmitBtn.addEventListener("click", (e) => {
+registersubmitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   console.log("click");
@@ -128,15 +129,11 @@ const icon = document.createElement("div");
   info.textContent = `You are logged in!`;
 
 
-  toastNotification(icon, info)
-  registerUser(registerUrl, userData);
+  // toastNotification(icon, info)
+   userInfo = await registerUser(registerUrl, userData);
+console.log(userInfo)
 
 
-
-//  displayUserToastNotification();
-//   setTimeout(() => {
-//     removeToastNotification();
-//   }, 2000);
 
   // location.href="../index.html"
 });
@@ -148,19 +145,3 @@ const icon = document.createElement("div");
 // })
 
 
-// function displayUserToastNotification() {
-//   const toastDiv = document.createElement("div");
-//   toastDiv.classList.add("toastNotification");
-
-//   const checkmark = document.createElement("div");
-//   checkmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>`;
-//   const info = document.createElement("p");
-//   info.textContent = `You are logged in!`;
-
-//   toastDiv.append(checkmark, info);
-//   document.querySelector(".toast-parent").append(toastDiv);
-// }
-
-// function removeToastNotification() {
-//   document.querySelector(".toastNotification").remove();
-// }

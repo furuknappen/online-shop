@@ -10,9 +10,10 @@ p {
   margin: 0;
   padding: 0;
 }
- /* border-radius: var(--borderRadius); */
+
+/* border-radius: var(--borderRadius); */
 .border {
- 
+
   border-color: var(--border-color);
   border-style: solid;
   border-width: 1px;
@@ -51,15 +52,16 @@ li {
   padding: 1rem;
 }
 
-.sr-only{
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding:0;
+  padding: 0;
   overflow: hidden;
   clip-path: inset(50%);
-white-space: nowrap;
+  white-space: nowrap;
 }
+
 /* ------------- */
 h1 {
   font-family: var(--main-font);
@@ -92,7 +94,7 @@ input:focus {
   display: block;
   padding: 1rem 2rem;
   font-family: var(--second-font);
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: var(--primary-color);
   color: white;
   border: none;
@@ -121,14 +123,16 @@ button:hover {
   cursor: pointer;
 }
 
-button:focus-visible{
+button:focus-visible {
   outline: 3px solid #4a90e2;
   outline-offset: 2px;
 }
-a:focus-visible{
+
+a:focus-visible {
   outline: 3px solid #4a90e2;
   outline-offset: 2px;
 }
+
 /* look into this - cart */
 .visually-hidden {
   position: absolute;
@@ -170,10 +174,15 @@ a:focus-visible{
   margin: 1rem;
   width: 6rem;
 }
+
 /* Back Btn STOP */
 @media (min-width: 768px) {
   .backBtn {
     margin: 2rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
   }
 
   h2 {

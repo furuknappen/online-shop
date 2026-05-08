@@ -54,8 +54,8 @@ async function loginUser(url, userData) {
     // 4. Parse the successful response JSON
     const data = await response.json();
 
-    console.log("User logged inn successfully:", data);
-    return data;
+    console.log("User logged in successfully:", data);
+    return data.data;
   } catch (error) {
     console.error("There was an error:", error);
   }
@@ -64,7 +64,7 @@ async function loginUser(url, userData) {
 
 
 const loginsubmitBtn = document.getElementById("loginBtn");
-loginsubmitBtn.addEventListener("click", (e) => {
+loginsubmitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   console.log("click");
@@ -80,9 +80,22 @@ loginsubmitBtn.addEventListener("click", (e) => {
   };
   
 
-  loginUser(loginUrl, userData);
+  const userInfo = await loginUser(loginUrl, userData);
 
+ addUserInfoLocalStorage(userInfo)
 
-
-  // location.href="../index.html"
+  location.href="../index.html"
 });
+
+function addUserInfoLocalStorage(userInfo) {
+  let storage = JSON.parse(localStorage.getItem("userInfo")) || {};
+  storage= {...storage, ...userInfo}
+  localStorage.setItem("userInfo", JSON.stringify(storage));
+ console.log("storage: ", storage)
+ console.log("userInfo: ", userInfo)
+}
+
+const user = JSON.parse(localStorage.getItem("userInfo"))
+
+const userAccessToken = user.accessToken;
+console.log("Access : " + userAccessToken)

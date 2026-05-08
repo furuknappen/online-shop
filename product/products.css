@@ -1,7 +1,8 @@
 .flexDivItemPage {
   font-family: var(--main-font);
   position: relative;
-
+display: flex;
+flex-direction: column;
 }
 
 .content {

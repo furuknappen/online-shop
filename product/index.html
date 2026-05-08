@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/toast-notifications.css">
+   <link rel="stylesheet" href="../styles/modal.css">
   <title>Cositas | Cart</title>
 </head>
 
@@ -45,12 +46,12 @@
       <!-- <a href="comingsoon-page.html" aria-label="Search">
         <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
       </a> -->
-      <a href="comingsoon-page.html" aria-label="Profile" rel="noopener noreferrer">
+      <a id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
         <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
       </a>
       <a href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
-        <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+        <img class="headerSvg header-cart-btn" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
       </a>
     </div>
 
@@ -61,13 +62,22 @@
 
     <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
       <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-      <a class="navLink" href="../cart/index.html" rel="noopener noreferrer">Shoppingcart</a>
-      <a class="navLink" href="../comingsoon-page.html" rel="noopener noreferrer">Profile</a>
+      <a class="navLink header-cart-btn" rel="noopener noreferrer">Shoppingcart</a>
+      <a class="navLink" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
     </nav>
   </header>
 
 
-  <main class="flexDivItemPage toast-parent">
+  <main class="flexDivItemPage toast-parent modal-parent">
+    <!-- <dialog id="login-modal" class="modal border">
+     <h3>Sign in?</h3>
+      <p id="modal-text"></p>
+<div class="buttons-div">
+      <button class="btn-small" id="close-modal-btn">Close</button>
+      <a class="btn" href="../account/login.html"> Sign in</a>
+    </div>
+    </dialog> -->
+
     <a class="backBtn linkBackBtn" href="../index.html">
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -96,7 +106,7 @@
         <!-- quantity -->
 
         <div class="buttonDiv"></div>
-        <div id="noSizeError"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+        <!-- <div id="noSizeError"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="icon icon-tabler icons-tabler-outline icon-tabler-alert-square-rounded">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -105,10 +115,10 @@
             <path d="M12 16h.01" />
           </svg>
           Please choose a size
-        </div>
+        </div> -->
         <div class="btn-container">
           <a class="btn itempageBtn" id="addToCartBtn">Add to Cart</a>
-          <a class="shareBtn"> Share</a>
+          <a class="shareBtn" id="shareBtn"> Share</a>
         </div>
       </div>
     </div>
@@ -126,6 +136,7 @@
 
   <script type="module" src="product.js"></script>
   <script type="module" src="../scripts/header.js"></script>
+  <!-- <script type="module" src="../scripts/header.js"></script> -->
 </body>
 
 </html>

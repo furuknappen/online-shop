@@ -1,9 +1,12 @@
 import { toastNotification } from "../scripts/toastNotification.js";
-import {rerenderCartNotification } from "../scripts/header.js";
+import { createModal } from "../scripts/modal.js";
+import { rerenderCartNotification } from "../scripts/header.js";
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
 //TODO: add share btn
 const url = "https://v2.api.noroff.dev/online-shop/";
+
+const user = JSON.parse(localStorage.getItem("userInfo"));
 
 async function fetchData() {
   try {
@@ -19,8 +22,6 @@ async function fetchData() {
     alert("Could not fetch data: " + error);
   }
 }
-
-
 
 async function displayProduct() {
   const product = await fetchData();
@@ -50,28 +51,33 @@ async function displayProduct() {
   }
 
   const addToCartBtn = document.getElementById("addToCartBtn");
-  const noSizeError = document.getElementById("noSizeError");
-
-  // fjerne no size og endre sånn at hvis de ikke velger quantity s blir det automatisk 1
-  // document.querySelectorAll("input[name='size']").forEach((radio) => {
-  //   radio.addEventListener("change", () => {
-  //     noSizeError.style.display = "none";
-  //   });
-  // });
 
   addToCartBtn.addEventListener("click", (event) => {
     event.preventDefault();
+    console.log("click");
+    if (user === null || user === "") {
 
-    // const selectedSize = document.querySelector("input[name='size']:checked");
-
-    // if (!selectedSize) {
-    //   noSizeError.style.display = "flex";
-    //   return;
-    // }
-    // noSizeError.style.display = "none";
-    // addToCart(item, selectedSize.value);
-    addToCart(product);
+      const heading = "Sign in?"
+      const message = "You need to be signed in to add to cart.";
+      const buttonText = "Sign in"
+      createModal(heading, message, buttonText, redirectToLogin);
+      
+    } else {
+      // location.href = "./comingsoon-page.html";
+      addToCart(product);
+    }
   });
+
+  // headerCartBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   if (user === null || user === "") {
+
+  //     loginModal.showModal();
+  //   } else {
+  //     // location.href = "./comingsoon-page.html";
+  //     addToCart(product);
+  //   }
+  // });
 
   // quantity input
 
@@ -103,6 +109,10 @@ async function displayProduct() {
   });
 }
 
+// const loginModal = document.getElementById("login-modal");
+
+
+
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -123,4 +133,22 @@ function addToCart(product) {
 }
 
 await displayProduct();
-const cartContent = localStorage.getItem("cart");
+// const cartContent = localStorage.getItem("cart");
+
+const shareBtn = document.getElementById("shareBtn");
+shareBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Copy click");
+  try {
+    navigator.clipboard.writeText(window.location.href);
+    toastNotification("Link copied!", "success");
+  } catch (error) {
+    toastNotification("Could not copy link:" + error, "error");
+    console.log(error);
+  }
+});
+
+function redirectToLogin(){
+  location.href = "/account/login.html"
+
+}

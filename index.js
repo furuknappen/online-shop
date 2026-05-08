@@ -238,3 +238,8 @@ function rerenderCarouselCards(products) {
     // });
   });
 }
+
+// const user = JSON.parse(localStorage.getItem("userInfo"))
+
+// const userAccessToken = user.accessToken;
+// console.log("Access : " + userAccessToken)
