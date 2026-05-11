@@ -1,0 +1,148 @@
+footer {
+  background-color: var(--main-color);
+  /* font-family: var(--main-font); */
+  color: var(--text-color-light);
+}
+
+.footer-logo {
+  font-size: 5rem;
+  color: var(--text-color-light);
+  font-family: var(--main-font);
+  margin-bottom: 4rem;
+
+  display: flex;
+  align-self: center
+}
+
+.flexDivFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-inline: clamp(10%, 12%, 8rem);
+  padding-block: 9vw;
+
+}
+
+.flexDivFooter ul a {
+  font-family: var(--text-font);
+}
+
+footer nav {
+  line-height: 4rem;
+  display: none;
+}
+
+footer ul {
+  text-wrap: nowrap;
+}
+
+footer a {
+  /* text-decoration: none; */
+  color: var(--accentColor3);
+  font-size: 1rem;
+}
+
+footer li:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+footer h3 {
+  /* text-decoration: underline; */
+  /* text-underline-offset: 5px; */
+  color: var(--text-color-light);
+  font-weight: normal;
+  margin-bottom: 1rem;
+  font-family: var(--main-font);
+  font-size: 1.7rem;
+}
+
+.logoAndSocials {
+  /* margin-top: 30px;
+  margin-inline: 1rem; */
+}
+
+
+.socials {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: row;
+  list-style: none;
+  height: 3rem;
+  gap: 1.5rem
+    /* margin-top: 1rem; */
+}
+
+.socials img {
+  height: 40px;
+}
+
+footer p {
+  justify-self: center;
+  padding-bottom: 2rem;
+  color: var(--text-color-light);
+  font-family: var(--text-font);
+}
+
+.mobileLinks {
+  display: block;
+  font-size: 1.5rem;
+  padding-bottom: 3rem;
+  font-family: var(--main-font);
+
+/* text-transform: uppercase; */
+  /* text-decoration: underline;
+  text-underline-offset: 5px; */
+
+
+}
+
+#nav-social {
+  display: block
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 769px) {
+  footer nav {
+    line-height: 3rem;
+    display: block;
+  }
+
+  .flexDivFooter {
+    flex-direction: row;
+      padding-inline: 2rem;
+  }
+.footer-logo {
+  font-size: 4rem;
+  margin-right: 2rem
+
+
+}
+  footer li {
+    display: flex;
+   margin-right: 2rem
+  }
+
+  .mobileLinks {
+    display: none;
+  }
+
+  .socials {
+    gap: 0rem;
+    justify-content: left;
+    /* margin-top: 1rem; */
+    flex-wrap: wrap;
+  
+  }
+
+  /* .socials ul {
+ 
+} */
+}
+
+/* ............ Desktops ................*/
+@media (min-width: 1025px) {
+  .flexDivFooter {
+   justify-content: space-around;
+  }
+}

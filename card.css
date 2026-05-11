@@ -1,0 +1,118 @@
+.card {
+  font-family: var(--main-font);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--borderRadius);
+  color: black;
+}
+.card:focus-visible{
+    outline: 2px solid var(--primary-color)
+}
+.card:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.imgDiv {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem
+}
+
+.cardImg {
+  max-width: 100%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cardTextDiv {
+  padding: 0.5rem;
+  align-self: bottom;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-wrap: wrap;
+}
+
+.itemName {
+  /* font-size: clamp(1rem, 2vw, 2.5rem); */
+  font-size: 1rem;
+  font-family: var(--text-font);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: baseline;
+  gap: 0.5rem
+}
+
+.priceNormal {
+  /* font-size: clamp(1rem, 3vw, 2.5rem);  */
+  font-family: var(--main-font);
+  color: var(--red-dark);
+  font-size: 1.2rem;
+
+}
+
+.priceOld {
+  color: var(--gray-light);
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .priceContainer {
+
+    flex-direction: row;
+    gap: 1rem
+  }
+
+  .card {
+    max-width: 250px;
+  }
+
+  .itemName {
+    /* font-size: clamp(1rem, 1.2vw, 2rem); */
+    font-size: 1.1rem;
+  }
+
+
+  .priceNormal {
+    /* font-size: clamp(1rem, 1.5vw, 2rem); */
+    font-size: 1.9rem;
+  }
+
+  .priceOld {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+  }
+
+  .imgDiv {
+    height: 250px;
+  }
+
+  .beforePrice {
+    /* font-size: 1.1rem; */
+    color: rgb(112, 111, 111);
+  }
+}
+
+
+
+/*............ Desktops ................*/
+/* @media (min-width: 1025px) {
+
+} */

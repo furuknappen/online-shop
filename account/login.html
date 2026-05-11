@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Camilla Furuknappen Larsen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse all our quality products to create the life you want for yourself!">
+  <meta http-equiv="Content-Language" content="en">
+
+  <!-- TODO: ned photo and url: -->
+  <meta property="og:title" content="Cositas | Sign in">
+  <meta property="og:description" content="Login to your account">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Cositas">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+
+
+  <link rel="stylesheet" href="../variables.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../card.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <title>Cositas | Sign in</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../index.html" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+      Cositas
+    </a>
+
+    <div id="headerSvgs">
+      <!-- <a href="../comingsoon-page.html" aria-label="Search">
+        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
+      </a> -->
+      <a 
+       href="../comingsoon-page.html" 
+       id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
+        <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="cartBtn" href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+        <div class="cartNotification"></div>
+        <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+
+    <!-- Hamburger menu -->
+    <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
+      <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true">
+    </button>
+
+    <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+      <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
+      <a class="navLink" href="../cart-page.html" rel="noopener noreferrer">Shoppingcart</a>
+      <a class="navLink" href="../comingsoon-page.html" rel="noopener noreferrer">Profile</a>
+    </nav>
+  </header>
+
+  <main class="form-main-div">
+    <div class="register-div">
+      <h1> Sign in </h1>
+      <form>
+        <div class="form-group">
+          <label for="login-email"> Email Address</label><br>
+          <input type="email" id="login-email" name="email" placeholder="email@example.com" pattern="@" required>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password"> Password</label><br>
+          <input id="login-password" name="login-password" required placeholder="Enter password" type="password"><br>
+        </div>
+
+        <div class="bottomButtons">
+          <div class="backToBtnDivCheckout">
+            <p>Dont have an account yet?</p>
+            <a class="linkBackBtn" href="register.html">
+              <!-- <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 12l14 0" />
+                <path d="M5 12l6 6" />
+                <path d="M5 12l6 -6" />
+              </svg> -->
+              <span>
+                Sign up here
+              </span>
+            </a>
+          </div>
+          <a  type="submit" class="btn checkoutBtn" id="loginBtn"> Sign in</a>
+        </div>
+
+      </form>
+    </div>
+
+
+
+
+
+
+
+  </main>
+
+  <footer>
+    <div class="flexDivFooter">
+      <!-- <div class="logoAndSocials"> -->
+      <a href="../index.html" aria-label="Cositas Home" class="footer-logo" rel="noopener noreferrer">
+        Cositas
+      </a>
+
+      <a class="mobileLinks" href="../comingsoon-page.html">Help & support</a>
+      <a class="mobileLinks" href="../comingsoon-page.html">More from Cositas</a>
+
+
+
+      <!-- </div> -->
+
+      <nav aria-labelledby="footer-help-info">
+        <h3 id="footer-help-info">Help & Support</h3>
+        <ul>
+          <li> <a href="../comingsoon-page.html"> Help </a> </li>
+          <li> <a href="../comingsoon-page.html" aria-label="Frequently asked Questions">
+              FAQ </a> </li>
+          <li> <a href="../comingsoon-page.html">Track order</a> </li>
+          <li> <a href="../comingsoon-page.html">Delivery & returns</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-about-cositas">
+        <h3 id="footer-about-cositas">More from Cositas</h3>
+        <ul>
+          <li> <a href="../comingsoon-page.html"> About us </a> </li>
+          <li> <a href="../comingsoon-page.html"> Contact us </a> </li>
+          <li> <a href="../comingsoon-page.html"> Our history </a> </li>
+          <li> <a href="../comingsoon-page.html"> Job offers at Cositas</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="social-links-title" id="nav-social">
+        <h3 id="social-links-title">Follow Cositas</h3>
+        <ul class="socials">
+          <li>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on YouTube">
+              <img src="../assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on X (formerly Twitter)">
+              <img src="../assets/svg/sosials/x.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on Instagram">
+              <img src="../assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on Facebook">
+              <img src="../assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <p>© Cositas 2025 - All rights reserved </p>
+  </footer>
+
+  <script type="module" src="login.js"></script>
+  <script type="module" src="../scripts/header.js"></script>
+</body>
+
+</html>

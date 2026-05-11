@@ -1,0 +1,178 @@
+#gridContainerHomepage {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  column-gap: 8px;
+  row-gap: 8px;
+  margin-bottom: 3rem;
+}
+
+.bestsellerDiv {
+  margin-inline: auto;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  text-wrap: nowrap;
+  margin-inline: 1rem;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.bestsellerDiv h1 {
+  font-family: var(--main-font);
+  font-weight: 400;
+  margin-bottom: 1rem
+}
+
+.popular-items {
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid rgb(15, 141, 10); */
+
+}
+
+
+/* -------- carousel -------- */
+#carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+ 
+ 
+}
+.carousel-title-container{
+    text-align: left;
+    width:100%
+}
+
+.carousel-btn-card-container {
+  position: relative;
+margin-top:1rem;
+  width: fit-content;
+
+}
+
+#carousel-cards-container {
+  /* border: 3px solid rgb(46, 184, 172); */
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  gap: 0.5rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  border-radius: 50%;
+  top: 37%;
+  background-color: white;
+  border-color: var(--border-color);
+  border-style: solid;
+}
+
+.carousel-btn img {
+  width: 20px;
+  height: 20px;
+
+}
+
+#carousel-prev-btn {
+  left: -4%;
+  padding: 13px 15px 10px 10px;
+}
+
+#carousel-next-btn {
+  right: -4%;
+  padding: 13px 12px 10px 15px
+}
+
+
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 769px) {
+  #gridContainerHomepage {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .bestsellerDiv {
+    margin-inline: 1rem;
+  }
+
+/* #carousel-card{
+  width: 3rem;
+} */
+
+
+  #carousel-container {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 8rem;
+ border-radius: var(--borderRadius);
+   border-color: var(--border-color);
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 4rem;
+}
+
+.carousel-btn-card-container {
+  position: relative;
+  /* border: 3px solid rgb(255, 0, 221); */
+  width: fit-content;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+#carousel-cards-container {
+  /* border: 3px solid rgb(46, 184, 172); */
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  border-radius: 50%;
+  top: 37%;
+  background-color: white;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.carousel-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+#carousel-prev-btn {
+  left: -5%;
+  padding: 13px 15px 10px 10px;
+}
+
+#carousel-next-btn {
+  right: -5%;
+  padding: 13px 12px 10px 15px
+}
+
+
+
+
+
+
+}
+
+@media (min-width: 1025px) {
+  #gridContainerHomepage {
+    /* width: 60rem; */
+    column-gap: 15px;
+    row-gap: 15px;
+    margin-bottom: 3rem;
+  }
+
+  .bestsellerLink {
+    font-size: 2rem;
+  }
+}

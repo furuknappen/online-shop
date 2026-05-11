@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* border-radius: var(--borderRadius); */
+.border {
+
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 1px;
+}
+
+p {
+  /* color: #474242 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ------------- */
+h1 {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 1.4rem;
+  padding-block: 0rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--borderRadius);
+  width: 100%;
+}
+
+input:focus {
+  border-style: solid;
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.btn {
+  display: block;
+  padding: 1rem 2rem;
+  font-family: var(--second-font);
+  font-size: 1.2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-hover);
+  text-decoration: none;
+}
+
+.btn:active {
+  background-color: var(--primary-color-click);
+  color: white;
+  transform: translateY(2px);
+  text-decoration: none;
+}
+
+.btn::after {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* look into this - cart */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+/* Back Btn */
+.linkBackBtn {
+  color: var(--accentColor1);
+  font-family: var(--second-font);
+  display: flex;
+  align-items: center;
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+}
+
+
+.linkBackBtn:active {
+  transform: translateY(2px);
+}
+
+.icon-tabler-arrow-left {
+  height: 25px;
+  width: 25px;
+}
+
+.backBtn {
+  position: relative;
+  margin: 1rem;
+  width: 6rem;
+}
+
+/* Back Btn STOP */
+@media (min-width: 768px) {
+  .backBtn {
+    margin: 2rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/*............ Large Desktops ................*/
+@media (min-width: 2550px) {
+  main {
+    padding-inline: 20rem;
+  }
+
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Camilla Furuknappen Larsen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse all our quality products to create the life you want for yourself!">
+  <meta http-equiv="Content-Language" content="en">
+
+  <!-- TODO: ned photo and url: -->
+  <meta property="og:title" content="Cositas | Cart">
+  <meta property="og:description" content="All items in your cart is displayed here, have a look at your chatch!">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Cositas">
+ 
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+ <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png" >
+
+
+  <link rel="stylesheet" href="../variables.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../card.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="cart-page.css">
+  <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/breadcrumbs.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+  <title>Cositas | Cart</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="/" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+      Cositas
+    </a>
+
+    <div id="headerSvgs">
+      <!-- <a href="comingsoon-page.html" aria-label="Search">
+        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
+      </a> -->
+      <a id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
+        <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="cartBtn" href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+        <div class="cartNotification"></div>
+        <img class="headerSvg" src="../assets/svg/shopping-cart.svg  " alt="" aria-hidden="true">
+      </a>
+    </div>
+
+<!-- Hamburger menu -->
+    <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
+        <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true"> 
+    </button>
+
+      <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+        <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
+        <a class="navLink" href="../cart/index.html" rel="noopener noreferrer">Shoppingcart</a>
+        <a class="navLink" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
+      </nav>
+  </header>
+
+
+ <nav class="navBreadCrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumbs">
+      <li><a aria-current="page"> Cart </a></li>
+      <li><a href="checkout-page.html"> Checkout </a></li>
+      <li><a href="comingsoon-page.html"> Shipping </a></li>
+      <li><a href="comingsoon-page.html">Payment</a></li>
+    </ol>
+  </nav>
+
+
+  <main class="flexDiv modal-parent">
+    <section role="region" class="cartSummaryDiv" aria-labelledby="cart-heading">
+      <h1 class="heading" id="cart-heading">Your Shoppingbag</h1>
+
+      <!-- remove productline from css -->
+
+      <h2>Products</h2>
+      <div class="productContainer">
+       
+  
+ 
+      </div>
+    </section>
+
+    <div class="backToBtnDivCart">
+      <a class="linkBackBtn" href="../index.html">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M5 12l14 0" />
+          <path d="M5 12l6 6" />
+          <path d="M5 12l6 -6" />
+        </svg>
+        <span>
+          Back to homepage
+        </span>
+      </a>
+    </div>
+
+
+    <hr class="dividerHrCart" aria-hidden="true">
+
+    <section role="region" class="orderSummaryDiv" aria-labelledby="order-summary-heading">
+      <h2 id="order-summary-heading"> Order Summary</h2>
+      <hr aria-hidden="true">
+      <dl>
+        <div class="flexBetween">
+          <dt class="orderInfo"> Shipping</dt>
+          <dd class="orderInfo"> FREE </dd>
+        </div>
+        <div class="flexBetween">
+          <div>
+            <dt class="orderInfo"> Money saved</dt>
+            <a href="comingsoon-page.html" aria-label="Add a discount code" role="button">Add a discount code</a>
+          </div>
+          <dd class="orderInfo discounted"> 0 ,- </dd>
+        </div>
+        <div class="flexBetween totalDiv">
+          <dt class="orderInfo"> Total</dt>
+          <dd class="orderInfo"><span class="totalPrice"> </span>  ,-</dd>
+        </div>
+      </dl>
+      <a href="../checkout.index.html" id="goToCheckout" class="btn cartpageBtn"> Go to checkout</a>
+    </section>
+  </main>
+ <footer>
+
+    <div class="flexDivFooter">
+      <!-- <div class="logoAndSocials"> -->
+      <a href="index.html" aria-label="Cositas Home" class="footer-logo" rel="noopener noreferrer">
+        Cositas
+      </a>
+
+      <a class="mobileLinks" href="comingsoon-page.html">Help & support</a>
+      <a class="mobileLinks" href="comingsoon-page.html">More from Cositas</a>
+
+
+
+      <!-- </div> -->
+
+      <nav aria-labelledby="footer-help-info">
+        <h3 id="footer-help-info">Help & Support</h3>
+        <ul>
+          <li> <a href="comingsoon-page.html"> Help </a> </li>
+          <li> <a href="comingsoon-page.html" aria-label="Frequently asked Questions">
+              FAQ </a> </li>
+          <li> <a href="comingsoon-page.html">Track order</a> </li>
+          <li> <a href="comingsoon-page.html">Delivery & returns</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-about-cositas">
+        <h3 id="footer-about-cositas">More from Cositas</h3>
+        <ul>
+          <li> <a href="comingsoon-page.html"> About us </a> </li>
+          <li> <a href="comingsoon-page.html"> Contact us </a> </li>
+          <li> <a href="comingsoon-page.html"> Our history </a> </li>
+          <li> <a href="comingsoon-page.html"> Job offers at Cositas</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="social-links-title" id="nav-social">
+        <h3 id="social-links-title">Follow Cositas</h3>
+        <ul class="socials">
+          <li>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on YouTube">
+              <img src="/assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on X (formerly Twitter)">
+              <img src="/assets/svg/sosials/x.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on Instagram">
+              <img src="/assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on Facebook">
+              <img src="/assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <p>© Cositas 2025 - All rights reserved </p>
+  </footer>
+  <script type="module" src="cart-page.js"></script>
+    <script type="module" src="../scripts/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+header {
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  height: 3.5rem;
+  margin-top: 0rem;
+
+  box-shadow: 0 1px 3px hsla(193, 53%, 35%, 0.12);
+}
+
+.header-logo {
+  font-family: var(--main-font);
+  color: var(--text-color-dark);
+  font-weight: 600;
+  font-size: 2.3rem;
+}
+
+.navLinks {
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.navLink {
+  text-decoration: transparent;
+  font-family: var(--text-font);
+  /* color: rgb(187, 21, 21); */
+  text-decoration-thickness: 2px;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+
+.navMobLinks {
+  position: absolute;
+  z-index: 100;
+}
+
+.navLink[aria-current="page"] {
+  color: var(--primary-color)
+}
+
+.navLink:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.navLink:active {
+  color: #2b778b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+#hamburgerBTN {
+  padding: 5px;
+  margin: 1rem;
+  background-color: transparent;
+  border-style: none;
+}
+
+/* #hamburgerBTN:focus-visible {
+  outline: 2px solid var(--primary-color) ;
+
+} */
+
+#hamburgerSvg {
+  padding: 1px;
+  height: 2rem;
+}
+
+#headerSvgs {
+  display: none;
+}
+
+.cartNotification {
+  position: absolute;
+  bottom: -9px;
+  right: 5px;
+  background-color: red;
+  color: white;
+
+  border-radius: 999px;
+  font-size: 12px;
+  display: none
+}
+
+
+.under10 {
+  padding: 0.2rem 0.3rem 0.1rem 0.2rem;
+  display: block
+}
+
+.over10 {
+  padding: 0.2rem 0.2rem 0.1rem 0.3rem;
+  display: block;
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 769px) {
+  header {
+    padding-inline: 1.5rem;
+
+    height: 3.5rem;
+    margin-top: 0rem
+  }
+
+  .navLinks {
+    display: none;
+
+  }
+
+  #hamburgerBTN {
+    display: none;
+  }
+
+  #headerSvgs {
+    display: flex;
+
+  }
+
+  .headerSvg {
+    padding-inline: 0.5rem;
+  }
+}
+
+
+
+/*............ Desktops ................*/
+@media (min-width: 1025px) {
+  header {
+    padding-inline: 1.5rem;
+    height: 4rem;
+    margin-top: 0px;
+    align-items: center;
+  }
+
+  .navLinks {
+    /* display:flex; */
+    max-width: 70rem;
+    font-size: 1.4rem;
+    justify-self: center;
+  }
+
+  #hamburgerBTN {
+    display: none;
+  }
+
+  #headerSvgs {
+    display: flex;
+    padding-inline: 3rem;
+  }
+
+  .headerSvg {
+    padding-inline: 1rem;
+    height: 100%
+  }
+}
+
+/* .navMobLinks,
+#menu-checkbox {
+  display: none;
+  position: relative;
+}
+
+#menu-checkbox:checked~.navMobLinks {
+  display: block;
+} */
+
+.navMobLinks {
+  position: absolute;
+  right: 0;
+  top: 56px;
+  background-color: white;
+  padding-block: 1rem;
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+.navLink {
+  display: block;
+  padding-block: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 3rem;
+  color: var(--text-color-dark);
+
+}
+
+.navLink:active {
+  background-color: var(--primary-color);
+
+}

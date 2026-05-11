@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Camilla Furuknappen Larsen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse all our quality products to create the life you want for yourself!">
+  <meta http-equiv="Content-Language" content="en">
+
+  <!-- TODO: ned photo and url: -->
+  <meta property="og:title" content="Cositas | Cart">
+  <meta property="og:description" content="All items in your cart is displayed here, have a look at your chatch!">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Cositas">
+
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+
+
+  <link rel="stylesheet" href="../variables.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../card.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/toast-notifications.css">
+   <link rel="stylesheet" href="../styles/modal.css">
+  <title>Cositas | Cart</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="/" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+      Cositas
+    </a>
+
+    <div id="headerSvgs">
+      <!-- <a href="comingsoon-page.html" aria-label="Search">
+        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
+      </a> -->
+      <a id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
+        <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+        <div class="cartNotification"></div>
+        <img class="headerSvg header-cart-btn" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+
+    <!-- Hamburger menu -->
+    <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
+      <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true">
+    </button>
+
+    <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+      <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
+      <a class="navLink header-cart-btn" rel="noopener noreferrer">Shoppingcart</a>
+      <a class="navLink" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
+    </nav>
+  </header>
+
+
+  <main class="flexDivItemPage toast-parent modal-parent">
+    <!-- <dialog id="login-modal" class="modal border">
+     <h3>Sign in?</h3>
+      <p id="modal-text"></p>
+<div class="buttons-div">
+      <button class="btn-small" id="close-modal-btn">Close</button>
+      <a class="btn" href="../account/login.html"> Sign in</a>
+    </div>
+    </dialog> -->
+
+    <a class="backBtn linkBackBtn" href="../index.html">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
+      <span>
+        Back
+      </span>
+    </a>
+    <div class="content">
+      <img class="itemImage" src="" alt="">
+
+      <div class="textSide" id="textSide">
+
+        <h1 class="h1Itemname"> </h1>
+        <div class="priceContainer">
+          <!-- price -->
+        </div>
+        <p class="infoText"> </p>
+        <p>Tags: <span class="item-tags"> </span></p>
+
+        <!-- quantity -->
+
+        <div class="buttonDiv"></div>
+        <!-- <div id="noSizeError"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-alert-square-rounded">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 3c7.2 0 9 1.8 9 9c0 7.2 -1.8 9 -9 9c-7.2 0 -9 -1.8 -9 -9c0 -7.2 1.8 -9 9 -9" />
+            <path d="M12 8v4" />
+            <path d="M12 16h.01" />
+          </svg>
+          Please choose a size
+        </div> -->
+        <div class="btn-container">
+          <a class="btn itempageBtn" id="addToCartBtn">Add to Cart</a>
+          <a class="shareBtn" id="shareBtn"> Share</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="item-reviews">
+      <h2> Reviews</h2>
+      <div class="reviews-container">
+        <!-- reviews goes here -->
+      </div>
+
+    </div>
+  </main>
+
+
+  <script type="module" src="product.js"></script>
+  <script type="module" src="../scripts/header.js"></script>
+  <!-- <script type="module" src="../scripts/header.js"></script> -->
+</body>
+
+</html>
