@@ -24,9 +24,10 @@
  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png" >
  
 
-  <link rel="stylesheet" href="../variables.css">
-  <link rel="stylesheet" href="../global.css">
-  <link rel="stylesheet" href="../card.css">
+  <link rel="stylesheet" href="./variables.css">
+  <link rel="stylesheet" href="./global.css">
+  <link rel="stylesheet" href="./card.css">
+   <link rel="stylesheet" href="./styles/modal.css">
   <link rel="stylesheet" href="../index.css">
   <!-- <link rel="stylesheet" href="cart-page.css"> -->
   <link rel="stylesheet" href="../styles/header.css">
@@ -45,28 +46,28 @@
       <!-- <a href="comingsoon-page.html" aria-label="Search">
         <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
       </a> -->
-      <a  id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
-        <img class="headerSvg" src="assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
+      <a  id="profile-button-pc" class="profileBtn" aria-label="Profile" rel="noopener noreferrer">
+        <img class="headerSvg" src="./assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
       </a>
-      <a class="cartBtn header-cart-btn" href="cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+      <a class="cartBtn header-cart-btn" href="./cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
-        <img class="headerSvg" src="assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+        <img class="headerSvg" src="./assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
       </a>
     </div>
 
 <!-- Hamburger menu -->
     <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
-        <img id="hamburgerSvg" src="assets/svg/hamburger-menu.svg" alt="" aria-hidden="true"> 
+        <img id="hamburgerSvg" src="./assets/svg/hamburger-menu.svg" alt="" aria-hidden="true"> 
     </button>
 
       <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
-        <a class="navLink navHome" href="index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-        <a class="navLink header-cart-btn" href="cart-page.html" rel="noopener noreferrer">Shoppingcart</a>
-        <a class="navLink" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
+        <a class="navLink navHome" href="./index.html" aria-current="page" rel="noopener noreferrer">Home</a>
+        <a class="navLink header-cart-btn" rel="noopener noreferrer">Shoppingcart</a>
+        <a class="navLink profileBtn" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
       </nav>
   </header>
 
-  <main class="toast-parent">
+  <main class="toast-parent modal-parent">
     <section class="bestsellerDiv" aria-labelledby="homepage-title">
       <h1 id="homepage-title">
         Our Products

@@ -1,38 +1,65 @@
+import { createModal } from "./modal.js";
+
 const hamburgerMenuNav = document.getElementById("main-nav-mob");
 const hamburgerMenuBtn = document.getElementById("hamburgerBTN");
+const cartBtn = document.querySelectorAll(".header-cart-btn");
 
-const profileBtnPc = document.getElementById("profile-button-pc");
-const profileBtnMobile = document.getElementById("profile-button-mobile")
 // localStorage.removeItem("userInfo")
 
- const user = JSON.parse(localStorage.getItem("userInfo"));
-
-profileBtnPc.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log("click");
-  redirectProfile();
-});
-profileBtnMobile.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log("click");
-  redirectProfile();
+cartBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    console.log("click");
+    redirectCart(user);
+  });
 });
 
+function redirectCart(user) {
+  if (user === null || user === "") {
+    createModal(
+      "Sign in?",
+      "You need to be signed in to go to cart.",
+      "Sign in",
+      redirectToLogin,
+      "",
+    );
+  } else {
+    location.href = "../cart/index.html";
+  }
+}
 
-function redirectProfile() {
- 
+const profileBtn = document.querySelectorAll(".profileBtn");
+profileBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    console.log("click");
+    redirectProfile(user);
+  });
+});
+
+function redirectProfile(user) {
   console.log(user);
   // const userAccessToken = user.accessToken;
   // console.log("Access : " + userAccessToken);
 
-
   if (user === null || user === "") {
-    location.href = "/account/login.html";
+    location.href = "../account/login.html";
   } else {
-    location.href = "/comingsoon-page.html";
-  
+    // location.href = "../checkout/index.html"
+    createModal("Log out?", "You are about to log out", "Log out", logOut, "");
+  }
 }
+
+function logOut() {
+  localStorage.clear();
 }
+
+function redirectToLogin() {
+  location.href = "/account/login.html";
+}
+
 const en = JSON.parse(localStorage.getItem("userInfo"));
 console.log("en: ", en);
 

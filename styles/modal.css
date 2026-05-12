@@ -1,35 +1,60 @@
-.modal{
-  padding: 4em 6rem;
+.modal {
+  padding: 2em 3rem;
   border-radius: var(--borderRadius);
   justify-self: center;
   align-self: center;
-  color:var(--text-color-dark)
+  color: var(--text-color-dark);
+
 }
 
-.modal::backdrop{
-  background-color: hsla(240, 12%, 25%, 0.4)
+.modal::backdrop {
+  background-color: hsla(240, 20%, 36%, 0.6)
 }
 
-.modal h3{
-font-size: 2.5rem;
-font-weight: 400;
+.modal h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: var(--main-font)
 }
 
-.modal p{
- padding-block: 2rem 3rem;
- font-size: 1.2rem;
+.modal p {
+  padding-block: 2rem 3rem;
+  font-size: 1.2rem;
+  font-family: var(--text-font)
 }
 
-.buttons-div{
+.buttons-div {
   /* padding: 3rem */
   display: flex;
   justify-content: space-around;
-
+  gap: 2rem
 }
 
-.btn-small{
+.btn-small {
   background-color: transparent;
-  border: none;
   font-size: 1.1rem;
-  color:var(--text-color-dark)
+  color: var(--text-color-dark);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--borderRadius);
+}
+
+.btn:focus-visible,
+.btn-small:focus-visible {
+  outline: 3px solid var(--text-color-dark);
+  outline-offset: 2px;
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+
+  .modal {
+    padding: 4em 6rem;
+  }
+
+  .buttons-div {
+    gap: 2rem
+  }
+
+
 }
