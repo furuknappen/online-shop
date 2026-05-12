@@ -21,6 +21,7 @@ header {
 .a-btn{
 border:none;
 background-color: transparent;
+position: relative
 }
 
 .navLinks {
@@ -64,10 +65,6 @@ background-color: transparent;
   border-style: none;
 }
 
-/* #hamburgerBTN:focus-visible {
-  outline: 2px solid var(--primary-color) ;
-
-} */
 
 #hamburgerSvg {
   padding: 1px;
@@ -84,7 +81,7 @@ background-color: transparent;
   right: 5px;
   background-color: red;
   color: white;
-
+text-align: center;
   border-radius: 999px;
   font-size: 12px;
   display: none
@@ -92,12 +89,12 @@ background-color: transparent;
 
 
 .under10 {
-  padding: 0.2rem 0.3rem 0.1rem 0.2rem;
+  padding: 2px 5px 2px 5px;
   display: block
 }
 
 .over10 {
-  padding: 0.2rem 0.2rem 0.1rem 0.3rem;
+  padding: 3px 3px 3px 3px;
   display: block;
 }
 
@@ -141,7 +138,6 @@ background-color: transparent;
   }
 
   .navLinks {
-    /* display:flex; */
     max-width: 70rem;
     font-size: 1.4rem;
     justify-self: center;
@@ -162,15 +158,6 @@ background-color: transparent;
   }
 }
 
-/* .navMobLinks,
-#menu-checkbox {
-  display: none;
-  position: relative;
-}
-
-#menu-checkbox:checked~.navMobLinks {
-  display: block;
-} */
 
 .navMobLinks {
   position: absolute;

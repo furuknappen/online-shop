@@ -67,15 +67,6 @@
 
 
   <main class="flexDivItemPage toast-parent modal-parent">
-    <!-- <dialog id="login-modal" class="modal border">
-     <h3>Sign in?</h3>
-      <p id="modal-text"></p>
-<div class="buttons-div">
-      <button class="btn-small" id="close-modal-btn">Close</button>
-      <a class="btn" href="../account/login.html"> Sign in</a>
-    </div>
-    </dialog> -->
-
     <a class="backBtn linkBackBtn" href="../index.html">
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -89,7 +80,7 @@
         Back
       </span>
     </a>
-    <div class="content">
+    <div class="content" id="product-content">
       <img class="itemImage" src="" alt="">
 
       <div class="textSide" id="textSide">
@@ -100,20 +91,7 @@
         </div>
         <p class="infoText"> </p>
         <p>Tags: <span class="item-tags"> </span></p>
-
-        <!-- quantity -->
-
         <div class="buttonDiv"></div>
-        <!-- <div id="noSizeError"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-alert-square-rounded">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 3c7.2 0 9 1.8 9 9c0 7.2 -1.8 9 -9 9c-7.2 0 -9 -1.8 -9 -9c0 -7.2 1.8 -9 9 -9" />
-            <path d="M12 8v4" />
-            <path d="M12 16h.01" />
-          </svg>
-          Please choose a size
-        </div> -->
         <div class="btn-container">
           <a class="btn itempageBtn" id="addToCartBtn">Add to Cart</a>
           <a class="shareBtn" id="shareBtn"> Share</a>
@@ -127,14 +105,78 @@
       <div class="reviews-container">
         <!-- reviews goes here -->
       </div>
-
     </div>
   </main>
+  
+<footer>
+
+    <div class="flexDivFooter">
+      <!-- <div class="logoAndSocials"> -->
+      <a href="../index.html" aria-label="Cositas Home" class="footer-logo">
+        Cositas
+      </a>
+
+      <a class="mobileLinks" href="../comingsoon-page.html">Help & support</a>
+      <a class="mobileLinks" href="../comingsoon-page.html">More from Cositas</a>
 
 
-  <script type="module" src="product.js"></script>
+
+      <!-- </div> -->
+
+      <nav aria-labelledby="footer-help-info">
+        <h3 id="footer-help-info">Help & Support</h3>
+        <ul>
+          <li> <a href="../comingsoon-page.html"> Help </a> </li>
+          <li> <a href="../comingsoon-page.html" aria-label="Frequently asked Questions">
+              FAQ </a> </li>
+          <li> <a href="../comingsoon-page.html">Track order</a> </li>
+          <li> <a href="../comingsoon-page.html">Delivery & returns</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-about-cositas">
+        <h3 id="footer-about-cositas">More from Cositas</h3>
+        <ul>
+          <li> <a href="../comingsoon-page.html"> About us </a> </li>
+          <li> <a href="../comingsoon-page.html"> Contact us </a> </li>
+          <li> <a href="../comingsoon-page.html"> Our history </a> </li>
+          <li> <a href="../comingsoon-page.html"> Job offers at Cositas</a> </li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="social-links-title" id="nav-social">
+        <h3 id="social-links-title">Follow Cositas</h3>
+        <ul class="socials">
+          <li>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on YouTube">
+              <img src="../assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on X (formerly Twitter)">
+              <img src="../assets/svg/sosials/x.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
+              aria-label="Cositas on Instagram">
+              <img src="../assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on Facebook">
+              <img src="../assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <p>© Cositas 2025 - All rights reserved </p>
+  </footer>
+
+  <script type="module" src="./product.js"></script>
   <script type="module" src="../scripts/header.js"></script>
-  <!-- <script type="module" src="../scripts/header.js"></script> -->
 </body>
 
 </html>

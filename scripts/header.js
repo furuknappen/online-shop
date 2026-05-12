@@ -2,15 +2,14 @@ import { createModal } from "./modal.js";
 
 const hamburgerMenuNav = document.getElementById("main-nav-mob");
 const hamburgerMenuBtn = document.getElementById("hamburgerBTN");
-const cartBtn = document.querySelectorAll(".header-cart-btn");
-
+const cartBtn = document.querySelectorAll(".cartBtn");
+rerenderCartNotification()
 // localStorage.removeItem("userInfo")
 
 cartBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     // e.preventDefault();
     const user = JSON.parse(localStorage.getItem("userInfo"));
-    console.log("click");
     redirectCart(user);
   });
 });
@@ -26,6 +25,7 @@ function redirectCart(user) {
     );
   } else {
     location.href = "../cart/index.html";
+    console.log("tert")
   }
 }
 
@@ -34,20 +34,15 @@ profileBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     // e.preventDefault();
     const user = JSON.parse(localStorage.getItem("userInfo"));
-    console.log("click");
     redirectProfile(user);
   });
 });
 
 function redirectProfile(user) {
-  console.log(user);
-  // const userAccessToken = user.accessToken;
-  // console.log("Access : " + userAccessToken);
-
   if (user === null || user === "") {
     location.href = "../account/login.html";
   } else {
-    // location.href = "../checkout/index.html"
+
     createModal("Log out?", "You are about to log out", "Log out", logOut, "");
   }
 }
@@ -85,13 +80,14 @@ hamburgerMenuBtn.addEventListener("click", () => {
 });
 
 export function rerenderCartNotification() {
+  console.log("enters cartnot")
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const notification = document.querySelector(".cartNotification");
-  //TODO: finne ut hvordan man kan vise hele antallet
-  notification.textContent = cart.length;
-  if (cart.length == 0) {
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0)
+  notification.textContent = totalQuantity;
+  if (totalQuantity == 0) {
     // do nothing
-  } else if (cart.length <= 9) {
+  } else if (totalQuantity <= 9) {
     notification.classList.add("under10");
     notification.classList.remove("over10");
   } else {
