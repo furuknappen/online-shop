@@ -1,0 +1,35 @@
+.comingSoonMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 8rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.comingSoonMain p {
+  font-family: var(--text-font);
+  margin-block: 2rem;
+}
+
+.tool {
+  height: 100px
+}
+
+.comingSoonBtn {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .comingSoonMain {
+    margin-block: 13rem;
+  }
+
+  .tool {
+    height: 150px;
+    margin-bottom: 5rem;
+  }
+
+}

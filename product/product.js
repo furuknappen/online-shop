@@ -149,6 +149,6 @@ shareBtn.addEventListener("click", (e) => {
 });
 
 function redirectToLogin(){
-  location.href = "/account/login.html"
+  location.href = "./account/login.html"
 
 }

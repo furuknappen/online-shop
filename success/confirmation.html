@@ -34,6 +34,34 @@
   <title>Cositas | Home</title>
 </head>
 <body>
+  
+  <header>
+    <a href="../" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+      Cositas
+    </a>
+
+    <div id="headerSvgs">
+      <button class="profileBtn a-btn" aria-label="Profile" rel="noopener noreferrer">
+        <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
+      </button>
+      <button class="cartBtn a-btn" aria-label="Shopping cart" rel="noopener noreferrer">
+        <div class="cartNotification"></div>
+        <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <!-- Hamburger menu -->
+    <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
+      <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true">
+    </button>
+
+    <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+      <a class="navLink navHome " href="../index.html" rel="noopener noreferrer">Home</a>
+      <button class="navLink a-btn cartBtn " rel="noopener noreferrer">Shoppingcart</button>
+      <button class="navLink a-btn profileBtn" aria-label="Open profile" rel="noopener noreferrer">Profile</button>
+    </nav>
+  </header>
+
 <main class="confirmationMain">
 
     <svg class="checkmark" width="117" height="103" aria-hidden="true" viewBox="0 0 117 103" fill="none"

@@ -28,31 +28,29 @@
   <link rel="stylesheet" href="./global.css">
   <link rel="stylesheet" href="./card.css">
    <link rel="stylesheet" href="./styles/modal.css">
-  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="./index.css">
   <!-- <link rel="stylesheet" href="cart-page.css"> -->
-  <link rel="stylesheet" href="../styles/header.css">
-  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+   
   <title>Cositas | Home</title>
 </head>
 
 <body>
 
   <header>
-    <a href="index.html" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+    <a href="./" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
       Cositas
     </a>
 
     <div id="headerSvgs">
-      <!-- <a href="comingsoon-page.html" aria-label="Search">
-        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
-      </a> -->
-      <a  id="profile-button-pc" class="profileBtn" aria-label="Profile" rel="noopener noreferrer">
+      <button class="profileBtn a-btn" aria-label="Profile" rel="noopener noreferrer">
         <img class="headerSvg" src="./assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
-      </a>
-      <a class="cartBtn header-cart-btn" href="./cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+      </button>
+      <button class="cartBtn a-btn" href="./cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
         <img class="headerSvg" src="./assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
-      </a>
+      </button>
     </div>
 
 <!-- Hamburger menu -->
@@ -62,8 +60,8 @@
 
       <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
         <a class="navLink navHome" href="./index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-        <a class="navLink header-cart-btn" rel="noopener noreferrer">Shoppingcart</a>
-        <a class="navLink profileBtn" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
+        <button class="navLink a-btn cartBtn" rel="noopener noreferrer">Shoppingcart</button>
+        <button class="navLink a-btn profileBtn" rel="noopener noreferrer">Profile</button>
       </nav>
   </header>
 
@@ -86,7 +84,7 @@
         </div>
         <div class="carousel-btn-card-container">
           <button id="carousel-prev-btn" class="carousel-btn" aria-label="Previous Slide" type="button">
-            <img src="assets/svg/arrow-left-simple.svg" alt="" aria-hidden="true">
+            <img src="./assets/svg/arrow-left-simple.svg" alt="" aria-hidden="true">
           </button>
           <div id="carousel-status" class="sr-only" aria-live="polite" aria-atomic="true" role="status"> </div>
           <div id="carousel-cards-container">
@@ -95,7 +93,7 @@
 
           </div>
           <button id="carousel-next-btn" class="carousel-btn" aria-label="Next Slide" type="button">
-            <img src="assets/svg/arrow-right-simple.svg" alt="" aria-hidden="true">
+            <img src="./assets/svg/arrow-right-simple.svg" alt="" aria-hidden="true">
           </button>
         </div>
       </div>
@@ -108,12 +106,12 @@
 
     <div class="flexDivFooter">
       <!-- <div class="logoAndSocials"> -->
-      <a href="index.html" aria-label="Cositas Home" class="footer-logo" rel="noopener noreferrer">
+      <a href="./index.html" aria-label="Cositas Home" class="footer-logo" rel="noopener noreferrer">
         Cositas
       </a>
 
-      <a class="mobileLinks" href="comingsoon-page.html">Help & support</a>
-      <a class="mobileLinks" href="comingsoon-page.html">More from Cositas</a>
+      <a class="mobileLinks" href="./comingsoon-page.html">Help & support</a>
+      <a class="mobileLinks" href="./comingsoon-page.html">More from Cositas</a>
 
 
 
@@ -122,21 +120,21 @@
       <nav aria-labelledby="footer-help-info">
         <h3 id="footer-help-info">Help & Support</h3>
         <ul>
-          <li> <a href="comingsoon-page.html"> Help </a> </li>
-          <li> <a href="comingsoon-page.html" aria-label="Frequently asked Questions">
+          <li> <a href="./comingsoon-page.html"> Help </a> </li>
+          <li> <a href="./comingsoon-page.html" aria-label="Frequently asked Questions">
               FAQ </a> </li>
-          <li> <a href="comingsoon-page.html">Track order</a> </li>
-          <li> <a href="comingsoon-page.html">Delivery & returns</a> </li>
+          <li> <a href="./comingsoon-page.html">Track order</a> </li>
+          <li> <a href="./comingsoon-page.html">Delivery & returns</a> </li>
         </ul>
       </nav>
 
       <nav aria-labelledby="footer-about-cositas">
         <h3 id="footer-about-cositas">More from Cositas</h3>
         <ul>
-          <li> <a href="comingsoon-page.html"> About us </a> </li>
-          <li> <a href="comingsoon-page.html"> Contact us </a> </li>
-          <li> <a href="comingsoon-page.html"> Our history </a> </li>
-          <li> <a href="comingsoon-page.html"> Job offers at Cositas</a> </li>
+          <li> <a href="./comingsoon-page.html"> About us </a> </li>
+          <li> <a href="./comingsoon-page.html"> Contact us </a> </li>
+          <li> <a href="./comingsoon-page.html"> Our history </a> </li>
+          <li> <a href="./comingsoon-page.html"> Job offers at Cositas</a> </li>
         </ul>
       </nav>
 
@@ -145,24 +143,24 @@
         <ul class="socials">
           <li>
             <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on YouTube">
-              <img src="assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://x.com/" target="_blank" rel="noopener noreferrer"
               aria-label="Cositas on X (formerly Twitter)">
-              <img src="assets/svg/sosials/x.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/x.svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
               aria-label="Cositas on Instagram">
-              <img src="assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on Facebook">
-              <img src="assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
             </a>
           </li>
         </ul>
@@ -173,8 +171,8 @@
 
 
 
-  <script type="module" src="index.js"></script>
-  <script type="module" src="scripts/header.js"></script>
+  <script type="module" src="./index.js"></script>
+  <script type="module" src="./scripts/header.js"></script>
 </body>
 
 </html>

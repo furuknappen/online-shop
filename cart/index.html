@@ -16,11 +16,11 @@
   <meta property="og:image" content="">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Cositas">
- 
+
   <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
- <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png" >
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
 
 
   <link rel="stylesheet" href="../variables.css">
@@ -29,46 +29,44 @@
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="cart-page.css">
   <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/breadcrumbs.css">
+  <link rel="stylesheet" href="../styles/breadcrumbs.css">
   <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/modal.css">
+  <link rel="stylesheet" href="../styles/modal.css">
   <title>Cositas | Cart</title>
 </head>
 
 <body>
 
+  
   <header>
-    <a href="/" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+    <a href="../" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
       Cositas
     </a>
 
     <div id="headerSvgs">
-      <!-- <a href="comingsoon-page.html" aria-label="Search">
-        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
-      </a> -->
-      <a id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
+      <button class="profileBtn a-btn" aria-label="Profile" rel="noopener noreferrer">
         <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
-      </a>
-      <a class="cartBtn" href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+      </button>
+      <button class="cartBtn a-btn" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
-        <img class="headerSvg" src="../assets/svg/shopping-cart.svg  " alt="" aria-hidden="true">
-      </a>
+        <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
+      </button>
     </div>
 
-<!-- Hamburger menu -->
+    <!-- Hamburger menu -->
     <button id="hamburgerBTN" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-mob">
-        <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true"> 
+      <img id="hamburgerSvg" src="../assets/svg/hamburger-menu.svg" alt="" aria-hidden="true">
     </button>
 
-      <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
-        <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-        <a class="navLink" href="../cart/index.html" rel="noopener noreferrer">Shoppingcart</a>
-        <a class="navLink" id="profile-button-mobile" rel="noopener noreferrer">Profile</a>
-      </nav>
+    <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
+      <a class="navLink navHome " href="../index.html" rel="noopener noreferrer">Home</a>
+      <button class="navLink a-btn cartBtn " rel="noopener noreferrer">Shoppingcart</button>
+      <button class="navLink a-btn profileBtn" aria-label="Open profile" rel="noopener noreferrer">Profile</button>
+    </nav>
   </header>
 
 
- <nav class="navBreadCrumbs" aria-label="Breadcrumb">
+  <nav class="navBreadCrumbs" aria-label="Breadcrumb">
     <ol class="breadcrumbs">
       <li><a aria-current="page"> Cart </a></li>
       <li><a href="checkout-page.html"> Checkout </a></li>
@@ -86,9 +84,9 @@
 
       <h2>Products</h2>
       <div class="productContainer">
-       
-  
- 
+
+
+
       </div>
       <button id="removeAllItems"> Remove all items in cart</button>
     </section>
@@ -129,13 +127,13 @@
         </div>
         <div class="flexBetween totalDiv">
           <dt class="orderInfo"> Total</dt>
-          <dd class="orderInfo"><span class="totalPrice"> </span>  ,-</dd>
+          <dd class="orderInfo"><span class="totalPrice"> </span> ,-</dd>
         </div>
       </dl>
       <a href="" id="goToCheckout" class="btn cartpageBtn"> Proceed to Checkout</a>
     </section>
   </main>
- <footer>
+  <footer>
 
     <div class="flexDivFooter">
       <!-- <div class="logoAndSocials"> -->
@@ -176,24 +174,24 @@
         <ul class="socials">
           <li>
             <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on YouTube">
-              <img src="/assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/youtube.svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://x.com/" target="_blank" rel="noopener noreferrer"
               aria-label="Cositas on X (formerly Twitter)">
-              <img src="/assets/svg/sosials/x.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/x.svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
               aria-label="Cositas on Instagram">
-              <img src="/assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/instagram.svg" class="svg" alt="" aria-hidden="true">
             </a>
           </li>
           <li>
             <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Cositas on Facebook">
-              <img src="/assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
+              <img src="./assets/svg/sosials/facebook.svg" alt="" aria-hidden="true">
             </a>
           </li>
         </ul>
@@ -202,7 +200,7 @@
     <p>© Cositas 2025 - All rights reserved </p>
   </footer>
   <script type="module" src="cart-page.js"></script>
-    <script type="module" src="../scripts/header.js"></script>
+  <script type="module" src="../scripts/header.js"></script>
 </body>
 
 </html>

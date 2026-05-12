@@ -36,24 +36,20 @@
 
 <body>
 
+   
   <header>
-    <a href="../index.html" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
+    <a href="../" aria-label="Cositas Home" class="header-logo" rel="noopener noreferrer">
       Cositas
     </a>
 
     <div id="headerSvgs">
-      <!-- <a href="../comingsoon-page.html" aria-label="Search">
-        <img class="headerSvg" src="assets/svg/search.svg" alt="" aria-hidden="true">
-      </a> -->
-      <a 
-       href="../comingsoon-page.html" 
-       id="profile-button-pc" aria-label="Profile" rel="noopener noreferrer">
+      <button class="profileBtn a-btn" aria-label="Profile" rel="noopener noreferrer">
         <img class="headerSvg" src="../assets/svg/profile-pic-circle.svg" alt="" aria-hidden="true">
-      </a>
-      <a class="cartBtn" href="../cart/index.html" aria-label="Shopping cart" rel="noopener noreferrer">
+      </button>
+      <button class="cartBtn a-btn" aria-label="Shopping cart" rel="noopener noreferrer">
         <div class="cartNotification"></div>
         <img class="headerSvg" src="../assets/svg/shopping-cart.svg" alt="" aria-hidden="true">
-      </a>
+      </button>
     </div>
 
     <!-- Hamburger menu -->
@@ -62,9 +58,9 @@
     </button>
 
     <nav class="navLinks navMobLinks border" id="main-nav-mob" aria-label="Main Navigation" hidden>
-      <a class="navLink navHome" href="../index.html" aria-current="page" rel="noopener noreferrer">Home</a>
-      <a class="navLink" href="../cart-page.html" rel="noopener noreferrer">Shoppingcart</a>
-      <a class="navLink" href="../comingsoon-page.html" rel="noopener noreferrer">Profile</a>
+      <a class="navLink navHome " href="../index.html" rel="noopener noreferrer">Home</a>
+      <button class="navLink a-btn cartBtn " rel="noopener noreferrer">Shoppingcart</button>
+      <button class="navLink a-btn profileBtn" aria-label="Open profile" rel="noopener noreferrer">Profile</button>
     </nav>
   </header>
 

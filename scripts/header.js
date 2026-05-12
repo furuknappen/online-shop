@@ -57,7 +57,7 @@ function logOut() {
 }
 
 function redirectToLogin() {
-  location.href = "/account/login.html";
+  location.href = "./account/login.html";
 }
 
 const en = JSON.parse(localStorage.getItem("userInfo"));

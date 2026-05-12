@@ -18,6 +18,11 @@ header {
   font-size: 2.3rem;
 }
 
+.a-btn{
+border:none;
+background-color: transparent;
+}
+
 .navLinks {
   justify-content: space-evenly;
   flex: 1;
