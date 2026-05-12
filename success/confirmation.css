@@ -1,0 +1,66 @@
+.confirmationMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--main-font);
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.checkmark {
+  width: 7rem;
+  height: 7rem;
+  color: var(--green);
+  margin-block: 3rem
+}
+
+.confirmationHeading {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  padding-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.confirmationInfo {
+  font-size: 1.2rem;
+  width: 20rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.orderNumber {
+  font-size: 1.2rem;
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+  .confirmationMain {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+
+  .icon-tabler-check {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .confirmationHeading {
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .confirmationInfo {
+    width: 30rem;
+    padding-bottom: 1rem;
+  }
+
+  .orderNumber {
+    font-size: 1.5rem;
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+}

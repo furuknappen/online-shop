@@ -4,7 +4,7 @@
   flex-direction: column;
   margin-bottom: 3rem;
   font-family: var(--main-font);
-  color: var(--text-color-dark)
+  color: var(--text-color-dark);
 }
 
 .cartSummaryDiv {
@@ -26,13 +26,12 @@ h2 {
 
 .itemInfo {
   font-family: var(--text-font);
-
-  /* color: var(--text-color-dark); */
+  color: var(--text-color-dark);
 
 }
 
 .product-title {
-
+ color: var(--text-color);
   margin-bottom: 0.3rem;
   font-size: 1rem;
 }
@@ -40,6 +39,7 @@ h2 {
 .product-price {
   font-size: 1rem;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 
@@ -60,7 +60,8 @@ h2 {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   /* margin-right: 2rem; */
-  width: 100%
+  width: 100%;
+
 }
 
 .productContainer img {
@@ -75,6 +76,7 @@ h2 {
   flex-direction: column;
   padding-left: 1rem;
   align-items: left;
+  color: var(--text-color);
 }
 
 .priceContainer {
@@ -172,6 +174,23 @@ h2 {
   text-align: center;
 }
 
+#removeAllItems{
+  margin-inline: 0 auto;
+  margin-top: 2rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--borderRadius);
+  padding: 0.5rem;
+  background:transparent;
+  font-family: var(--text-font);
+  font-size: 0.9rem
+
+}
+
+#removeAllItems:hover{
+background-color: rgb(215, 215, 215)
+}
+
+
 /* ---- side bar ----*/
 .orderSummaryDiv {
   border-radius: var(--borderRadius);
@@ -245,7 +264,7 @@ hr {
   .flexDiv {
     flex-direction: row;
     position: relative;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     margin-bottom: 9rem;
   }
@@ -314,6 +333,6 @@ hr {
   }
 
   .dividerHrCart {
-    display: block;
+    display: none;
   }
 }

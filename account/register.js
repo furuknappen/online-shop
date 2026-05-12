@@ -8,7 +8,6 @@
 //TODO: make profile btn in header go to sign in page when pressed and not logged in.
 //TODO: make profile page go tp a profile page when pressed and logged in.
 
-
 // The URL for the register endpoint
 // const registerUrl= "https://v2.api.noroff.dev/auth/register";
 
@@ -32,7 +31,7 @@
 // console.log(userData)
 //   return userData
 // }
-const userInfo = ""
+let userInfo = "";
 
 async function registerUser(url, userData) {
   // clearErrormessage()
@@ -50,7 +49,6 @@ async function registerUser(url, userData) {
     const response = await fetch(url, postOptions);
 
     if (!response.ok) {
-      // Log the response body to see error details from the API
       const errorData = await response.json();
       // setErrorMessage(errorData)
       throw new Error(`Registration failed: ${JSON.stringify(errorData)}`);
@@ -91,17 +89,18 @@ registersubmitBtn.addEventListener("click", async (e) => {
   let uniquePassword = "";
   const alertPassword = document.getElementById("password-error");
   // trenger jeg denne?
-  // alert.classList.remove("alert") 
-const emailCriteria = "stud.noroff.no"
+  // alert.classList.remove("alert")
+  const emailCriteria = "stud.noroff.no";
 
-  if(!emailInput.includes(emailCriteria)) {
-   const alertEmail = document.getElementById("email-error")
-  alertEmail.innerHTML= 'Email must contain "stud.noroff.no"';
-  alertEmail.classList.add("alert");}
+  if (!emailInput.includes(emailCriteria)) {
+    const alertEmail = document.getElementById("email-error");
+    alertEmail.innerHTML = 'Email must contain "stud.noroff.no"';
+    alertEmail.classList.add("alert");
+  }
 
   if (password1Input === password2Input) {
     if (password1Input.length < 8) {
-      console.log("length error")
+      console.log("length error");
       alertPassword.innerHTML = "Passwords must be at least 8 characters long";
       alertPassword.classList.add("alert");
     } else {
@@ -121,19 +120,15 @@ const emailCriteria = "stud.noroff.no"
     email: emailInput,
     password: uniquePassword,
   };
-  
 
-const icon = document.createElement("div");
-  icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>`;
-  const info = document.createElement("p");
-  info.textContent = `You are logged in!`;
-
+  // const icon = document.createElement("div");
+  // icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>`;
+  // const info = document.createElement("p");
+  // info.textContent = `You are logged in!`;
 
   // toastNotification(icon, info)
-   userInfo = await registerUser(registerUrl, userData);
-console.log(userInfo)
-
-
+  userInfo = await registerUser(registerUrl, userData);
+  console.log(userInfo);
 
   // location.href="../index.html"
 });
@@ -143,5 +138,3 @@ console.log(userInfo)
 //   e.preventDefault()
 //   console.log("eventlistener works!")
 // })
-
-

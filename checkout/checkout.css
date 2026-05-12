@@ -1,0 +1,220 @@
+.mainCheckoutPage {
+  padding: 1rem;
+  display: flex;
+  align-items: top;
+  flex-direction: column-reverse;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-family: var(--main-font);
+  color: var(--text-color-dark)
+}
+
+/* ---- Contactside ---- */
+.sectionContact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem
+}
+
+.mainCheckoutPage h1 {
+  margin-block: 1rem
+}
+
+.expressBtnDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expressText {
+  font-family: var(--main-font);
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.expressBtn {
+  padding: 0.5rem 2rem;
+  border-radius: var(--borderRadius);
+  border: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.expressBtn:active {
+  transform: translateY(2px);
+}
+
+.paypal {
+  background-color: white;
+  border: 1px solid var(--border-color);
+}
+
+.paypal:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.google {
+  background-color: rgb(27, 27, 27);
+}
+
+.google:hover {
+  background-color: rgb(51, 51, 51);
+}
+
+.dividerDiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: var(--text-font);
+  margin-block: 1rem;
+}
+
+.dividerDiv hr {
+  width: 100%;
+}
+
+.dividerDiv p {
+  margin: 1rem;
+}
+
+
+
+.checkoutNameDiv {
+  display: flex;
+  /* gap: 1rem; */
+  flex-direction: column;
+}
+
+.form-group {
+  margin-top: 1.2rem;
+  flex: 1;
+  /* gap: 0.2rem */
+}
+
+label {
+  font-family: var(--text-font);
+  font-size: 1rem;
+  /* border: 1px solid red; */
+  display: block
+}
+
+.h1SpaceOver {
+  margin-top: 2rem;
+}
+
+.checkoutBtn {
+  width: auto;
+  font-size: 1.3rem;
+}
+
+.bottomButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* --------- divider -------- */
+.verticalDivider {
+  height: auto;
+  border: 1px solid var(--border-color);
+}
+
+/* -------- Summary Side -------- */
+.sectionOrderSummary {
+  width: 100%;
+}
+
+.sectionOrderSummary hr {
+  border: 1px solid var(--border-color);
+  margin-block: 1rem;
+}
+
+.miniCart {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-bottom: 0.3rem;
+  color: var(--text-color)
+}
+
+.miniCart img {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.summaryItemPrice {
+  margin-inline: auto 0;
+  font-size: 0.8rem;
+}
+
+.cartTitle {
+  font-size: 0.8rem;
+  margin-right: 0.5rem
+}
+
+.quantityNumber {
+  width: 1rem;
+  text-align: center;
+  margin-right: 0.5rem
+}
+
+.totalDiv {
+  margin-top: 0.5rem;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+/* .............. iPads (tablets) - Landscape ............ */
+@media (min-width: 768px) {
+  .mainCheckoutPage {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5rem;
+    position: relative;
+  }
+
+  .expressBtnDiv {
+    flex-direction: row;
+  }
+
+  .checkoutNameDiv {
+    flex-direction: row;
+  }
+
+  .sectionContact {
+    display: block;
+    width: clamp(34rem, 30%, 50rem);
+  }
+
+  .verticalDivider {
+    height: 65rem;
+    margin-inline: clamp(1rem, 3%, 4rem);
+    /* border: 1px solid var(--accentColor3); */
+    margin-top: 2rem;
+  }
+
+
+  .sectionOrderSummary {
+    margin-top: 2rem;
+    border: 1px solid var(--accentColor3);
+    padding: 2rem;
+    width: 30%;
+    min-width: 20rem;
+  }
+
+}

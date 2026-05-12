@@ -39,9 +39,12 @@ function rerenderCart() {
     const productLine = document.createElement("div");
     productLine.classList.add("product-line");
 
-    const image = document.createElement("img");
-    image.src = item.image.url;
-    image.alt = item.image.alt;
+    const image = document.createElement("a");
+    image.href = `../product/index.html?id=${item.id}`;
+    const img = document.createElement("img");
+    img.src = item.image.url;
+    img.alt = item.image.alt;
+    image.appendChild(img);
 
     const cartText = document.createElement("div");
     cartText.classList.add("cartText");
@@ -59,16 +62,12 @@ function rerenderCart() {
       updateQuantityInput(index);
     });
 
-   quantityInput.addEventListener("keydown", (e) => {
-     if(e.key === "Enter"){
-      e.preventDefault(); 
-      quantityInput.blur()
-     }
+    quantityInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        quantityInput.blur();
+      }
     });
-
-
-
-    
 
     const reduceQuantityBtn = document.createElement("button");
     reduceQuantityBtn.classList.add("reduceQuantityBtn", "quantityBtn");
@@ -89,7 +88,8 @@ function rerenderCart() {
     quantityDiv.append(reduceQuantityBtn, quantityInput, addQuantityBtn);
 
     // se litt på denne
-    const priceContainer = document.createElement("div");
+    const priceContainer = document.createElement("a");
+    priceContainer.href = `../product/index.html?id=${item.id}`;
     priceContainer.classList.add("priceContainer");
     let price = document.createElement("p");
     price.classList.add("itemInfo", "product-price");
@@ -112,7 +112,8 @@ function rerenderCart() {
       totalPrice += item.price * quantityInput.value;
     }
 
-    const title = document.createElement("p");
+    const title = document.createElement("a");
+    title.href = `../product/index.html?id=${item.id}`;
     title.classList.add("itemInfo", "product-title");
     title.textContent = item.title;
 
@@ -139,12 +140,13 @@ function rerenderCart() {
       createModal(heading, message, actionBtn, removeItemFromCart, index);
     });
 
-    productLine.append(image, cartText);
     cartText.append(title, priceContainer, quantityDiv);
+    productLine.append(image, cartText);
+
     productLine.append(trashBtn);
     productDisplay.appendChild(productLine);
     console.log("total price is", totalPrice);
-    document.querySelector("#goToCheckout").href = "checkout-page.html";
+    document.querySelector("#goToCheckout").href = "../checkout/index.html";
   });
   // TODO: total price does not work! BK pls
   document.querySelector(".discounted").textContent =
@@ -167,12 +169,11 @@ function reduceQuantity(item, index) {
 
   const oldValue = input.value;
   const newValue = Number(oldValue) - 1;
-
-  if (newValue <= 1) {
-  const heading = "Delete?";
-      const message = `Do you want to remove ${item.title} from your shopping cart?`;
-      const actionBtn = "Delete";
-      createModal(heading, message, actionBtn, removeItemFromCart, index);
+  if (newValue == 0) {
+    const heading = "Delete?";
+    const message = `Do you want to remove ${item.title} from your shopping cart?`;
+    const actionBtn = "Delete";
+    createModal(heading, message, actionBtn, removeItemFromCart, index);
   } else {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     input.value = newValue;
@@ -204,3 +205,20 @@ function updateQuantityInput(index) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+const removeAllItems = document.getElementById("removeAllItems");
+removeAllItems.addEventListener("click", (e) => {
+  e.preventDefault();
+  createModal(
+    "Delete all?",
+    "You are about to delete everything in your cart, is that what you want?",
+    "Delete all",
+    deleteCart,
+  );
+});
+
+function deleteCart() {
+  localStorage.removeItem("cart");
+  rerenderCart();
+}
+//
