@@ -24,8 +24,8 @@ function redirectCart(user) {
       "",
     );
   } else {
-    location.href = "../cart/index.html";
-    console.log("tert")
+    location.href = "/cart/index.html";
+
   }
 }
 
@@ -40,7 +40,7 @@ profileBtn.forEach((btn) => {
 
 function redirectProfile(user) {
   if (user === null || user === "") {
-    location.href = "../account/login.html";
+    location.href = "/account/login.html";
   } else {
 
     createModal("Log out?", "You are about to log out", "Log out", logOut, "");
@@ -52,7 +52,7 @@ function logOut() {
 }
 
 function redirectToLogin() {
-  location.href = "./account/login.html";
+  location.href = "/account/login.html";
 }
 
 const en = JSON.parse(localStorage.getItem("userInfo"));
