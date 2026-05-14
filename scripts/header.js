@@ -24,7 +24,7 @@ function redirectCart(user) {
       "",
     );
   } else {
-    location.href = "/cart/index.html";
+    location.href = "/online-shop/cart/index.html";
 
   }
 }
