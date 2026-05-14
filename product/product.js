@@ -125,3 +125,8 @@ shareBtn.addEventListener("click", (e) => {
 function redirectToLogin() {
   location.href = "../account/login.html";
 }
+
+
+document.getElementById("linkBackBtn").addEventListener("click", () => {
+  window.history.back()
+})

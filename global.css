@@ -11,6 +11,12 @@ p {
   padding: 0;
 }
 
+.a-btn{
+border:none;
+background-color: transparent;
+position: relative
+}
+
 /* border-radius: var(--borderRadius); */
 .border {
 
